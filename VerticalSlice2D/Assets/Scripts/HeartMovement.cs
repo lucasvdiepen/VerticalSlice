@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HeartMovement : MonoBehaviour
 {
-    public SpriteRenderer box;
-    public float boxBorderOffset = 0.63f;
-    public float speed = 5f;
+    [SerializeField] private SpriteRenderer box;
+    [SerializeField] private float boxBorderOffset = 0.63f;
+    [SerializeField] private float speed = 5f;
 
     private void Update()
     {
