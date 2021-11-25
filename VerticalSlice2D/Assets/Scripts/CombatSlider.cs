@@ -18,30 +18,33 @@ public class CombatSlider : MonoBehaviour
     }
     //checks what the slider hit
     public void checkHit() {
-        if (canHit) {
-            if (hitNow) {
+        if (canHit) 
+        {
+            if (hitNow) 
+            {
                 Debug.Log("<color=red>CRITICAL HIT</color>");
                 combatLogic.SliderDied(gameObject);
             }
-            else if (combatLogic.isInCombat && !hitNow) {
+            else if (combatLogic.isInCombat && !hitNow) 
+            {
                 print("Normal hit");
                 combatLogic.SliderDied(gameObject);
             }
         }
     }
-    //checks if slider is in the critical hit box
     private void Update()
     {
-        if(rect.anchoredPosition.x < criticalPosition.x && rect.anchoredPosition.x > criticalPosition.y) 
-        {
+        CriticalHitCheck();
+    }
+    //checks if slider is in the critical hit box
+    private void CriticalHitCheck() {
+        if (rect.anchoredPosition.x < criticalPosition.x && rect.anchoredPosition.x > criticalPosition.y) {
             hitNow = true;
         }
-        else  if(rect.anchoredPosition.x > criticalPosition.y)
-        {
-            hitNow = false; 
+        else if (rect.anchoredPosition.x > criticalPosition.y) {
+            hitNow = false;
         }
-        else 
-        {
+        else {
             combatLogic.SliderDied(gameObject);
         }
     }

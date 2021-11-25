@@ -24,14 +24,14 @@ public class CombatLogic : MonoBehaviour
     }
     private void Update() 
     {
-        //moving the sliders
-        movement = new Vector2(-moveSpeed, 0);
-        if (isInCombat && sliders[0] != null && sliders[1] != null) 
-        {
-            sliders[0].transform.position = new Vector3(sliders[0].transform.position.x - moveSpeed * Time.deltaTime, sliders[0].transform.position.y, 0);
-            sliders[1].transform.position = new Vector3(sliders[1].transform.position.x - moveSpeed * Time.deltaTime, sliders[1].transform.position.y, 0);
-            sliders[2].transform.position = new Vector3(sliders[2].transform.position.x - moveSpeed * Time.deltaTime, sliders[2].transform.position.y, 0);
-        }
+        //slider movement
+        SliderMovement();
+        //do things when press button
+        HandleInput();
+        
+    }
+    private void HandleInput() 
+    {
         //test input for debugging the combat
         if (Input.GetKeyDown(KeyCode.Backspace) && !isInCombat) 
         {
@@ -53,6 +53,17 @@ public class CombatLogic : MonoBehaviour
             }
         }
     }
+    private void SliderMovement() 
+    {
+        //moving the sliders
+        movement = new Vector2(-moveSpeed, 0);
+        if (isInCombat && sliders[0] != null && sliders[1] != null) 
+        {
+            sliders[0].transform.position = new Vector3(sliders[0].transform.position.x - moveSpeed * Time.deltaTime, sliders[0].transform.position.y, 0);
+            sliders[1].transform.position = new Vector3(sliders[1].transform.position.x - moveSpeed * Time.deltaTime, sliders[1].transform.position.y, 0);
+            sliders[2].transform.position = new Vector3(sliders[2].transform.position.x - moveSpeed * Time.deltaTime, sliders[2].transform.position.y, 0);
+        }
+    }
 
     //deactivated a specific slider
     public void SliderDied(GameObject slider) 
@@ -70,15 +81,21 @@ public class CombatLogic : MonoBehaviour
         }
     }
     //returns the nearest slider to refresh the update order
-    public GameObject GetNearestSlider() {
+    public GameObject GetNearestSlider() 
+    {
         GameObject nearestSlider = null;
-        for (int i = 0; i < sliders.Length; i++) {
-            if (sliders[i].gameObject.activeSelf) {
-                if (nearestSlider == null) {
+        for (int i = 0; i < sliders.Length; i++) 
+        {
+            if (sliders[i].gameObject.activeSelf) 
+            {
+                if (nearestSlider == null) 
+                {
                     nearestSlider = sliders[i];
                 }
-                else {
-                    if (sliders[i].GetComponent<RectTransform>().anchoredPosition.x < nearestSlider.GetComponent<RectTransform>().anchoredPosition.x) {
+                else 
+                {
+                    if (sliders[i].GetComponent<RectTransform>().anchoredPosition.x < nearestSlider.GetComponent<RectTransform>().anchoredPosition.x) 
+                    {
                         nearestSlider = sliders[i];
                     }
                 }
