@@ -10,18 +10,26 @@ public class TPBar : MonoBehaviour
         
     }
 
-    void updateSprite()
+    void UpdateSprite()
     {
         RectTransform sprite1 = GameObject.Find("TPBarFull").GetComponent<RectTransform>();
         GameObject thePlayer = GameObject.Find("Player");
         Player playerScript = thePlayer.GetComponent<Player>();
 
-        sprite1.sizeDelta = new Vector2(28, Mathf.RoundToInt((float)(2.79 * playerScript.TP)));
+        sprite1.sizeDelta = new Vector2(28, Mathf.RoundToInt((float)(2.8 * playerScript.TP)));
     }
 
     // Update is called once per frame
     void Update()
     {
-        updateSprite();   
+        UpdateSprite();   
+    }
+
+    public void AddTP(double functionTP)
+    {
+        GameObject thePlayer = GameObject.Find("Player");
+        Player playerTP = thePlayer.GetComponent<Player>();
+
+        playerTP.TP = playerTP.TP + functionTP;
     }
 }
