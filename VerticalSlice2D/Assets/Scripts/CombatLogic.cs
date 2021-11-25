@@ -1,26 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
 public class CombatLogic : MonoBehaviour
 {
     private Vector2 movement;
     private int deadSliderCount;
+    public GameObject test;
     [HideInInspector] public bool isInCombat = false;
     [SerializeField] private GameObject[] sliders;
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private Vector2 spawnArea;
     [SerializeField] private float moveSpeed;
-    public void StartCombat() 
-    {
+    public void StartCombat() {
         isInCombat = true;
-        for (int i = 0; i < sliders.Length; i++) 
-        {
+        for (int i = 0; i < sliders.Length; i++) {
             sliders[i].SetActive(true);
             sliders[i].transform.position = spawnPositions[i].position + new Vector3(UnityEngine.Random.Range(0, 10), 0, 0);
         }
-
     }
     private void Update() 
     {
@@ -34,6 +32,16 @@ public class CombatLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace) && !isInCombat) 
         {
             StartCombat();
+        }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            try {
+                GameObject obj = GetNearestSlider();
+                obj.GetComponent<CombatSlider>().canHit = true;
+                obj.GetComponent<CombatSlider>().checkHit();
+            }
+            catch {
+
+            }
         }
     }
 
@@ -51,8 +59,22 @@ public class CombatLogic : MonoBehaviour
             }
         }
     }
-    public void UpdateSliderOrder() {
-
+    public GameObject GetNearestSlider() {
+        GameObject nearestSlider = null;
+        for (int i = 0; i < sliders.Length; i++) {
+            if (sliders[i].gameObject.activeSelf) {
+                if (nearestSlider == null) {
+                    nearestSlider = sliders[i];
+                }
+                else {
+                    if (sliders[i].GetComponent<RectTransform>().anchoredPosition.x < nearestSlider.GetComponent<RectTransform>().anchoredPosition.x) {
+                        nearestSlider = sliders[i];
+                    }
+                }
+            }
+        }
+        test = nearestSlider;
+        return nearestSlider;
     }
 }
         

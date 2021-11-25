@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3e877812920440bfdfd4b38a03485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canHit: 0
   criticalPosition: {x: -445, y: -500}
 --- !u!1 &195935963
 GameObject:
@@ -1329,6 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729ec4ccbb3765c4e8357298e6fa7496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: {fileID: 0}
   isInCombat: 0
   sliders:
   - {fileID: 1665967359}
@@ -1338,8 +1340,8 @@ MonoBehaviour:
   - {fileID: 1958038584}
   - {fileID: 254488339}
   - {fileID: 1405609378}
-  SpawnArea: {x: 127, y: 530}
-  moveSpeed: 5
+  spawnArea: {x: 0, y: 0}
+  moveSpeed: 2.5
 --- !u!1 &1405609377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,6 +1606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3e877812920440bfdfd4b38a03485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canHit: 0
   criticalPosition: {x: -445, y: -500}
 --- !u!1 &1665967359 stripped
 GameObject:
@@ -1627,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3e877812920440bfdfd4b38a03485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canHit: 0
   criticalPosition: {x: -445, y: -500}
 --- !u!1 &1851266452
 GameObject:
