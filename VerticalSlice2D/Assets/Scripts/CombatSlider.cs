@@ -17,7 +17,7 @@ public class CombatSlider : MonoBehaviour
         rect = GetComponent<RectTransform>();
     }
     //checks what the slider hit
-    public void checkHit() 
+    public void CheckHit() 
     {
         if (canHit) 
         {

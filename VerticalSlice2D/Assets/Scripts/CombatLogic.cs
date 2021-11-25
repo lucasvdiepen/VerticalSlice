@@ -40,15 +40,10 @@ public class CombatLogic : MonoBehaviour
         //hit slider
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            try 
-            {
-                GameObject obj = GetNearestSlider();
+            GameObject obj = GetNearestSlider();
+            if(obj != null) {
                 obj.GetComponent<CombatSlider>().canHit = true;
-                obj.GetComponent<CombatSlider>().checkHit();
-            }
-            catch 
-            {
-
+                obj.GetComponent<CombatSlider>().CheckHit();
             }
         }
     }
@@ -56,11 +51,12 @@ public class CombatLogic : MonoBehaviour
     {
         //moving the sliders
         movement = new Vector2(-moveSpeed, 0);
-        if (isInCombat && sliders[0] != null && sliders[1] != null) 
+        if (isInCombat) 
         {
-            sliders[0].transform.position = new Vector3(sliders[0].transform.position.x - moveSpeed * Time.deltaTime, sliders[0].transform.position.y, 0);
-            sliders[1].transform.position = new Vector3(sliders[1].transform.position.x - moveSpeed * Time.deltaTime, sliders[1].transform.position.y, 0);
-            sliders[2].transform.position = new Vector3(sliders[2].transform.position.x - moveSpeed * Time.deltaTime, sliders[2].transform.position.y, 0);
+            for (int i = 0; i < sliders.Length; i++) 
+            {
+                sliders[i].transform.position = new Vector3(sliders[i].transform.position.x - moveSpeed * Time.deltaTime, sliders[i].transform.position.y, 0);
+            }
         }
     }
 
@@ -69,7 +65,7 @@ public class CombatLogic : MonoBehaviour
     {
         slider.SetActive(false);
         deadSliderCount++;
-        if(deadSliderCount >= 3) 
+        if(deadSliderCount >= sliders.Length) 
         {
             isInCombat = false;
             for (int i = 0; i < sliders.Length; i++) 
