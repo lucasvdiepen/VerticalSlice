@@ -10,7 +10,6 @@ public class CombatLogic : MonoBehaviour
     [HideInInspector] public bool isInCombat = false;
     [SerializeField] private GameObject[] sliders;
     [SerializeField] private Transform[] spawnPositions;
-    [SerializeField] private Vector2 spawnArea;
     [SerializeField] private float moveSpeed;
     public void StartCombat() 
     {

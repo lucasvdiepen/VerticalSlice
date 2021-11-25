@@ -17,7 +17,8 @@ public class CombatSlider : MonoBehaviour
         rect = GetComponent<RectTransform>();
     }
     //checks what the slider hit
-    public void checkHit() {
+    public void checkHit() 
+    {
         if (canHit) 
         {
             if (hitNow) 
@@ -36,15 +37,21 @@ public class CombatSlider : MonoBehaviour
     {
         CriticalHitCheck();
     }
+
     //checks if slider is in the critical hit box
-    private void CriticalHitCheck() {
-        if (rect.anchoredPosition.x < criticalPosition.x && rect.anchoredPosition.x > criticalPosition.y) {
+    private void CriticalHitCheck() 
+    {
+        //x = right side of the critical box and y = left side of the critical box
+        if (rect.anchoredPosition.x < criticalPosition.x && rect.anchoredPosition.x > criticalPosition.y) 
+        {
             hitNow = true;
         }
-        else if (rect.anchoredPosition.x > criticalPosition.y) {
+        else if (rect.anchoredPosition.x > criticalPosition.y) 
+        {
             hitNow = false;
         }
-        else {
+        else 
+        {
             combatLogic.SliderDied(gameObject);
         }
     }
