@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CombatSlider : MonoBehaviour
 {
-    public bool canHit;
+    [HideInInspector]public bool canHit;
     private RectTransform rect;
     private CombatLogic combatLogic;
     private bool hitNow;
