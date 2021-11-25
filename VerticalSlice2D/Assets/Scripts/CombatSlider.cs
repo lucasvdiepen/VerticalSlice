@@ -8,14 +8,15 @@ public class CombatSlider : MonoBehaviour
     private RectTransform rect;
     private CombatLogic combatLogic;
     private bool hitNow;
-    [SerializeField] private Vector2 criticalPosition;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Vector2 criticalPosition; //box to hit to get a critical hit
+    
+    private void Start()
     {
         canHit = false;
         combatLogic = FindObjectOfType<CombatLogic>();
         rect = GetComponent<RectTransform>();
     }
+    //checks what the slider hit
     public void checkHit() {
         if (canHit) {
             if (hitNow) {
@@ -28,8 +29,8 @@ public class CombatSlider : MonoBehaviour
             }
         }
     }
-    // Update is called once per frame
-    void Update()
+    //checks if slider is in the critical hit box
+    private void Update()
     {
         if(rect.anchoredPosition.x < criticalPosition.x && rect.anchoredPosition.x > criticalPosition.y) 
         {

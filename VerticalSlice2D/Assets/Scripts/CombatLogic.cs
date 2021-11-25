@@ -7,21 +7,24 @@ public class CombatLogic : MonoBehaviour
 {
     private Vector2 movement;
     private int deadSliderCount;
-    public GameObject test;
     [HideInInspector] public bool isInCombat = false;
     [SerializeField] private GameObject[] sliders;
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private Vector2 spawnArea;
     [SerializeField] private float moveSpeed;
-    public void StartCombat() {
+    public void StartCombat() 
+    {
+        //randomizing the position 
         isInCombat = true;
-        for (int i = 0; i < sliders.Length; i++) {
+        for (int i = 0; i < sliders.Length; i++) 
+        {
             sliders[i].SetActive(true);
             sliders[i].transform.position = spawnPositions[i].position + new Vector3(UnityEngine.Random.Range(0, 10), 0, 0);
         }
     }
     private void Update() 
     {
+        //moving the sliders
         movement = new Vector2(-moveSpeed, 0);
         if (isInCombat && sliders[0] != null && sliders[1] != null) 
         {
@@ -29,22 +32,29 @@ public class CombatLogic : MonoBehaviour
             sliders[1].transform.position = new Vector3(sliders[1].transform.position.x - moveSpeed * Time.deltaTime, sliders[1].transform.position.y, 0);
             sliders[2].transform.position = new Vector3(sliders[2].transform.position.x - moveSpeed * Time.deltaTime, sliders[2].transform.position.y, 0);
         }
+        //test input for debugging the combat
         if (Input.GetKeyDown(KeyCode.Backspace) && !isInCombat) 
         {
             StartCombat();
         }
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            try {
+
+        //hit slider
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            try 
+            {
                 GameObject obj = GetNearestSlider();
                 obj.GetComponent<CombatSlider>().canHit = true;
                 obj.GetComponent<CombatSlider>().checkHit();
             }
-            catch {
+            catch 
+            {
 
             }
         }
     }
 
+    //deactivated a specific slider
     public void SliderDied(GameObject slider) 
     {
         slider.SetActive(false);
@@ -59,6 +69,7 @@ public class CombatLogic : MonoBehaviour
             }
         }
     }
+    //returns the nearest slider to refresh the update order
     public GameObject GetNearestSlider() {
         GameObject nearestSlider = null;
         for (int i = 0; i < sliders.Length; i++) {
@@ -73,7 +84,6 @@ public class CombatLogic : MonoBehaviour
                 }
             }
         }
-        test = nearestSlider;
         return nearestSlider;
     }
 }
