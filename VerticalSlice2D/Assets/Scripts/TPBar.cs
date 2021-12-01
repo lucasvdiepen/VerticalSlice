@@ -20,7 +20,7 @@ public class TPBar : MonoBehaviour
 
         //this is very precise and hopefully still works after moving it please dont kill me
         spriteMask.position = new Vector2(spriteMask.position.x, startingY+(0.02805f*playerTP.TP));
-        //0.02805f is de sprite hoogte. Zodra wij sprites krijgen MOET DIT AANGEPAST WORDEN OM GOED TE WERKEN. Ik zou er een functie voor maken maar ik gebruik hier geen spriterenderer, dus kan ik het niet oproepen.
+        //0.02805f is de sprite hoogte. Zodra wij sprites krijgen MOET DIT AANGEPAST WORDEN OM GOED TE WERKEN. Ik zou er een functie voor maken maar ik gebruik hier geen spriterenderer, dus kan ik niet de grootte aanroepen.
     }
 
     // Update is called once per frame
