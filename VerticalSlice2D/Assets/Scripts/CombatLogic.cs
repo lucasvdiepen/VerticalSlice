@@ -18,8 +18,8 @@ public class CombatLogic : MonoBehaviour
         for (int i = 0; i < sliders.Length; i++) 
         {
             sliders[i].SetActive(true);
-            sliders[i].transform.position = spawnPositions[i].position + new Vector3(UnityEngine.Random.Range(0, 5), 0, 0);
-            yield return new WaitForSeconds(UnityEngine.Random.Range(.05f, .1f));
+            sliders[i].transform.position = spawnPositions[i].position + new Vector3(UnityEngine.Random.Range(0, 6.5f), 0, 0);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(.05f, .3f));
         }
     }
     private void Update() 
