@@ -5,28 +5,25 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private float height = 5f;
-    private Vector2 target;
-    private float startTime;
+    private float height;
     private float timeToReachTarget;
-    private bool projectileStarted;
-    private Vector3 startPosition;
     private float timeElapsed = 0f;
+    private float speedAfterTrajectory;
+    private bool projectileStarted;
+
+    private Vector2 target;
+    private Vector3 startPosition;
     private Vector3 lastPosition;
     private Vector3 diff;
 
-    public void StartProjectile(Vector2 target, float time)
+    public void StartProjectile(Vector2 target, float height, float time, float speedAfterTrajectory)
     {
         this.target = target;
+        this.speedAfterTrajectory = speedAfterTrajectory;
+        this.height = height;
         timeToReachTarget = time;
-        startTime = Time.time;
         projectileStarted = true;
         startPosition = transform.position;
-    }
-
-    private void Start()
-    {
-        StartProjectile(new Vector2(-1, -1), 3f);
     }
 
     private void Update()
@@ -40,15 +37,20 @@ public class Ball : MonoBehaviour
         {
             if(timeElapsed / timeToReachTarget >= 1)
             {
-                if(diff == null) diff = transform.position - lastPosition;
-
-                transform.position = transform.position + diff * timeToReachTarget;
+                transform.position += diff.normalized * speedAfterTrajectory * Time.deltaTime;
             }
             else
             {
-                lastPosition = transform.position;
                 Vector3 newPosition = Parabola(startPosition, target, height, timeElapsed / timeToReachTarget);
                 transform.position = newPosition;
+
+                Vector3 newDiff = newPosition - lastPosition;
+                if (newDiff != Vector3.zero)
+                {
+                    diff = newDiff;
+                }
+
+                lastPosition = newPosition;
                 timeElapsed += Time.deltaTime;
             }
         }
