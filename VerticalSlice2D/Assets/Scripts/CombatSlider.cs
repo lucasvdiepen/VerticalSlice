@@ -56,8 +56,10 @@ public class CombatSlider : MonoBehaviour
             combatLogic.SliderDied(gameObject);
         }
     }
-    private void SliderHit(bool criticalHit) {
-        if (criticalHit) {
+    private void SliderHit(bool criticalHit) 
+    {
+        if (criticalHit) 
+        {
             //Critical Hit! spawns a blinking slider 
             Debug.Log("<color=red>CRITICAL HIT</color>");
             GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
@@ -65,7 +67,8 @@ public class CombatSlider : MonoBehaviour
             blinker.transform.SetParent(transform.parent);
             KillSlider();
         }
-        else {
+        else 
+        {
             //Normal Hit! spawns a blinking slider 
             print("Normal hit");
             GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
@@ -74,7 +77,8 @@ public class CombatSlider : MonoBehaviour
         }
     }
     //this function is called when we manually want to destroy a slider
-    private void KillSlider() {
+    private void KillSlider() 
+    {
         combatLogic.SliderDied(gameObject);
     }
 }
