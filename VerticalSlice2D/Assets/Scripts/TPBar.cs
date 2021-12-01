@@ -12,11 +12,13 @@ public class TPBar : MonoBehaviour
 
     void UpdateSprite()
     {
-        RectTransform sprite1 = GameObject.Find("TPBarFull").GetComponent<RectTransform>();
+        //y = 0.715
+        //y = 3.52
+        Transform spriteMask = GameObject.Find("TPBar_Spritemask").GetComponent<Transform>();
         GameObject thePlayer = GameObject.Find("Player");
-        Player playerScript = thePlayer.GetComponent<Player>();
+        Player playerTP = thePlayer.GetComponent<Player>();
+        spriteMask.position = new Vector2(spriteMask.position.x, 0.16f+(0.02805f*playerTP.TP));
 
-        sprite1.sizeDelta = new Vector2(28, Mathf.RoundToInt((float)(2.8 * playerScript.TP)));
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class TPBar : MonoBehaviour
         UpdateSprite();   
     }
 
-    public void AddTP(double functionTP)
+    public void AddTP(float functionTP)
     {
         GameObject thePlayer = GameObject.Find("Player");
         Player playerTP = thePlayer.GetComponent<Player>();
