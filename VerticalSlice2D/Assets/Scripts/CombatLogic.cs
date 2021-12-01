@@ -11,14 +11,15 @@ public class CombatLogic : MonoBehaviour
     [SerializeField] private GameObject[] sliders;
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private float moveSpeed;
-    public void StartCombat() 
+    public IEnumerator StartCombat() 
     {
         //randomizing the position 
         isInCombat = true;
         for (int i = 0; i < sliders.Length; i++) 
         {
             sliders[i].SetActive(true);
-            sliders[i].transform.position = spawnPositions[i].position + new Vector3(UnityEngine.Random.Range(0, 10), 0, 0);
+            sliders[i].transform.position = spawnPositions[i].position + new Vector3(UnityEngine.Random.Range(0, 5), 0, 0);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(.05f, .1f));
         }
     }
     private void Update() 
@@ -34,7 +35,7 @@ public class CombatLogic : MonoBehaviour
         //test input for debugging the combat
         if (Input.GetKeyDown(KeyCode.Backspace) && !isInCombat) 
         {
-            StartCombat();
+            StartCoroutine(StartCombat());
         }
 
         //hit slider
@@ -60,12 +61,12 @@ public class CombatLogic : MonoBehaviour
         }
     }
 
-    //deactivated a specific slider
+    //deactivates and resets a specific slider and stops combat if all sliders are dead
     public void SliderDied(GameObject slider) 
     {
         slider.SetActive(false);
         deadSliderCount++;
-        if(deadSliderCount >= sliders.Length) 
+        if (deadSliderCount >= sliders.Length) 
         {
             isInCombat = false;
             for (int i = 0; i < sliders.Length; i++) 

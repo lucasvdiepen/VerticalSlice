@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatSlider : MonoBehaviour
 {
     [HideInInspector]public bool canHit;
     private RectTransform rect;
     private CombatLogic combatLogic;
-    private bool hitNow;
+    [SerializeField] private GameObject blinkingSlider;
     [SerializeField] private Vector2 criticalPosition; //box to hit to get a critical hit
-    
+    public bool hitNow;
+
     private void Start()
     {
+        //initial setup
         canHit = false;
         combatLogic = FindObjectOfType<CombatLogic>();
         rect = GetComponent<RectTransform>();
@@ -23,13 +26,20 @@ public class CombatSlider : MonoBehaviour
         {
             if (hitNow) 
             {
+                //Critical Hit! spawns a blinking slider 
                 Debug.Log("<color=red>CRITICAL HIT</color>");
-                combatLogic.SliderDied(gameObject);
+                GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
+                blinker.GetComponent<Image>().color = Color.yellow;
+                blinker.transform.SetParent(transform.parent);
+                KillSlider();
             }
             else if (combatLogic.isInCombat && !hitNow) 
             {
+                //Normal Hit! spawns a blinking slider 
                 print("Normal hit");
-                combatLogic.SliderDied(gameObject);
+                GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
+                blinker.transform.SetParent(transform.parent);
+                KillSlider();
             }
         }
     }
@@ -54,5 +64,9 @@ public class CombatSlider : MonoBehaviour
         {
             combatLogic.SliderDied(gameObject);
         }
+    }
+    //this function is called when we manually want to destroy a slider
+    private void KillSlider() {
+        combatLogic.SliderDied(gameObject);
     }
 }
