@@ -154,9 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBoxUI: {fileID: 1995443835}
   dialogueUIText: {fileID: 914010647}
-  dialogueObj: {fileID: 11400000, guid: b24c03a3677059b4ebbe9fc96e8dee55, type: 2}
+  dialogueObj: {fileID: 0}
   talkingSpeed: 0.05
-  pauzeSpeed: 1
+  pauseSpeed: 0
 --- !u!4 &10544928
 Transform:
   m_ObjectHideFlags: 0
