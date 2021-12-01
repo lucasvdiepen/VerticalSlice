@@ -26,20 +26,11 @@ public class CombatSlider : MonoBehaviour
         {
             if (hitNow) 
             {
-                //Critical Hit! spawns a blinking slider 
-                Debug.Log("<color=red>CRITICAL HIT</color>");
-                GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
-                blinker.GetComponent<Image>().color = Color.yellow;
-                blinker.transform.SetParent(transform.parent);
-                KillSlider();
+                SliderHit(true);
             }
             else if (combatLogic.isInCombat && !hitNow) 
             {
-                //Normal Hit! spawns a blinking slider 
-                print("Normal hit");
-                GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
-                blinker.transform.SetParent(transform.parent);
-                KillSlider();
+                SliderHit(false);
             }
         }
     }
@@ -63,6 +54,23 @@ public class CombatSlider : MonoBehaviour
         else 
         {
             combatLogic.SliderDied(gameObject);
+        }
+    }
+    private void SliderHit(bool criticalHit) {
+        if (criticalHit) {
+            //Critical Hit! spawns a blinking slider 
+            Debug.Log("<color=red>CRITICAL HIT</color>");
+            GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
+            blinker.GetComponent<Image>().color = Color.yellow;
+            blinker.transform.SetParent(transform.parent);
+            KillSlider();
+        }
+        else {
+            //Normal Hit! spawns a blinking slider 
+            print("Normal hit");
+            GameObject blinker = Instantiate(blinkingSlider, transform.position, Quaternion.identity);
+            blinker.transform.SetParent(transform.parent);
+            KillSlider();
         }
     }
     //this function is called when we manually want to destroy a slider
