@@ -10,7 +10,7 @@ public class DialogueLogic : MonoBehaviour
     [SerializeField] private GameObject dialogueBoxUI;
     [SerializeField] private TextMeshProUGUI dialogueUIText;
     [SerializeField] private Dialogue dialogueObj;
-    [SerializeField] private float talkingSpeed, pauzeSpeed;
+    [SerializeField] private float talkingSpeed, pauseSpeed;
     private void Awake() {
         AudioManager = FindObjectOfType<AudioManager>();
     }
@@ -34,7 +34,7 @@ public class DialogueLogic : MonoBehaviour
             }
             yield return new WaitForSeconds(talkingSpeed); 
         }
-        yield return new WaitForSeconds(pauzeSpeed); //pauses after very completed sentence
+        yield return new WaitForSeconds(pauseSpeed); //pauses after very completed sentence
         isActive = false;
         dialogueBoxUI.SetActive(false);
         dialogueUIText.text = string.Empty;

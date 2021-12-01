@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    public Sound[] sounds;
+    [SerializeField]private static AudioManager instance;
+    [SerializeField]private Sound[] sounds;
     // Start is called before the first frame update
     void Awake()
     {
