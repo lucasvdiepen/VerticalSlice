@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 7383158282834424869
     second: TEMPORARY_TPBar_1
+  - first:
+      213: -5671602102728715429
+    second: TEMPORARY_TPBar_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -177,7 +180,7 @@ TextureImporter:
         width: 32
         height: 284
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -198,7 +201,7 @@ TextureImporter:
         width: 28
         height: 280
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,6 +209,27 @@ TextureImporter:
       bones: []
       spriteID: 52434d0375f367660800000000000000
       internalID: 7383158282834424869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TEMPORARY_TPBar_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2
+        width: 28
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b531f7fdfeb6a41b0800000000000000
+      internalID: -5671602102728715429
       vertices: []
       indices: 
       edges: []
