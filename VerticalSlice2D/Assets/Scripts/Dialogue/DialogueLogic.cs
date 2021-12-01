@@ -11,15 +11,20 @@ public class DialogueLogic : MonoBehaviour
     [SerializeField] private Dialogue dialogueObj;
     [SerializeField] private float talkingSpeed, pauzeSpeed;
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space) && !isActive) {
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !isActive) 
+        {
             dialogueBoxUI.SetActive(true);
             StartCoroutine(StartDialogue());
         }
     }
-    private IEnumerator StartDialogue() {
+    private IEnumerator StartDialogue() 
+    {
         isActive = true;
-        foreach (char letter in dialogueObj.dialogueMessage) {
+        dialogueUIText.text = string.Empty;
+        foreach (char letter in dialogueObj.dialogueMessage) 
+        {
             dialogueUIText.text += letter;
             yield return new WaitForSeconds(talkingSpeed); 
         }
