@@ -6,13 +6,13 @@ using TMPro;
 public class DialogueLogic : MonoBehaviour
 {
     private bool isActive;
-    private AudioManager AudioManager;
+    private AudioManager audioManager;
     [SerializeField] private GameObject dialogueBoxUI;
     [SerializeField] private TextMeshProUGUI dialogueUIText;
     [SerializeField] private Dialogue dialogueObj;
     [SerializeField] private float talkingSpeed, pauseSpeed;
     private void Awake() {
-        AudioManager = FindObjectOfType<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     private void Update() 
     {
@@ -30,7 +30,7 @@ public class DialogueLogic : MonoBehaviour
         {
             dialogueUIText.text += letter;
             if(!char.IsWhiteSpace(letter)){
-                AudioManager.Play("DialogueVoice");
+                audioManager.Play("DialogueVoice");
             }
             yield return new WaitForSeconds(talkingSpeed); 
         }
