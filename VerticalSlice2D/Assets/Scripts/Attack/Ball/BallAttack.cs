@@ -10,8 +10,7 @@ public class BallAttack : MonoBehaviour
     [SerializeField] private GameObject ball;
 
     [SerializeField] private float ballHeight;
-    [SerializeField] private float timeToFinish;
-    [SerializeField] private float speedAfterFinish;
+    [SerializeField] private float timeToTarget;
 
     [SerializeField] private float spawnDelay;
 
@@ -53,6 +52,6 @@ public class BallAttack : MonoBehaviour
     private void SpawnBall()
     {
         GameObject newBall = Instantiate(ball, spawnPoint.position, Quaternion.identity);
-        newBall.GetComponent<Ball>().StartProjectile(target.position, ballHeight, timeToFinish, speedAfterFinish);
+        newBall.GetComponent<Ball>().StartProjectile(target.position, ballHeight, timeToTarget);
     }
 }

@@ -16,12 +16,12 @@ public class Ball : MonoBehaviour
     private Vector3 lastPosition;
     private Vector3 diff;
 
-    public void StartProjectile(Vector2 target, float height, float time, float speedAfterTrajectory)
+    public void StartProjectile(Vector2 target, float height, float timeToFinish)
     {
         this.target = target;
-        this.speedAfterTrajectory = speedAfterTrajectory;
         this.height = height;
-        timeToReachTarget = time;
+        speedAfterTrajectory = (14 * 1.5f) / timeToFinish;
+        timeToReachTarget = timeToFinish;
         projectileStarted = true;
         startPosition = transform.position;
     }
