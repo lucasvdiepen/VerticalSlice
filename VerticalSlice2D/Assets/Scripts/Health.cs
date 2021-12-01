@@ -7,8 +7,6 @@ public class Health : MonoBehaviour
     public int curHealth = 0;
     public int maxHealth = 100;
 
-    public HealthBar healthBar;
-
     void Start()
     {
         curHealth = maxHealth;
@@ -18,14 +16,29 @@ public class Health : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            DamagePlayer(10);
+            TakeDamage(10);
         }
     }
 
-    public void DamagePlayer(int damage)
+    public void TakeDamage(int damage)
     {
         curHealth -= damage;
 
-        healthBar.SetHealth(curHealth, maxHealth);
+        HandleTakeDamage();
+
+        if (curHealth <= 0)
+        {
+            HandleDeath();
+        }
+    }
+
+    protected virtual void HandleTakeDamage()
+    {
+        
+    }
+
+    protected virtual void HandleDeath()
+    {
+        
     }
 }
