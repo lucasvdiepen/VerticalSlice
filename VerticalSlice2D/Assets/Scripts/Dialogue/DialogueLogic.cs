@@ -26,6 +26,9 @@ public class DialogueLogic : MonoBehaviour
         foreach (char letter in dialogueObj.dialogueMessage) 
         {
             dialogueUIText.text += letter;
+            if(!char.IsWhiteSpace(letter)){
+                FindObjectOfType<AudioManager>().Play("DialogueVoice");
+            }
             yield return new WaitForSeconds(talkingSpeed); 
         }
         yield return new WaitForSeconds(pauzeSpeed); //pauses after very completed sentence

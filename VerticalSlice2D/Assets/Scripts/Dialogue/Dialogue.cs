@@ -8,5 +8,5 @@ public class Dialogue : ScriptableObject
     //dialoguelogic.cs uses this scriptableObject to make the dialogue
     [TextArea(1, 2)]
     public string dialogueMessage;
-    public string audioClipName;
+    public AudioClip soundEffect;
 }

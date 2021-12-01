@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea45ed4747980e46943a921a15eea34, type: 3}
   m_Name: testDialogue
   m_EditorClassIdentifier: 
-  dialogueMessage: 'MEOEOEOEWEOOEOE
-
-    EMEIWIOIEIEOEIE'
-  audioClipName: 333h8r38
+  dialogueMessage: Hallo dit is een dialogue test hahahahaha!
+  soundEffect: {fileID: 8300000, guid: 9102667e1f6f0044b82ed93890f685f5, type: 3}
