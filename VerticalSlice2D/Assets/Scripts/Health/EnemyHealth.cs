@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-
 public class EnemyHealth : Health
 {
     public TextMeshProUGUI healthText;
