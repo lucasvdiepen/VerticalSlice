@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class SelectionLogic : MonoBehaviour
 {
+    private AudioManager audiomanager;
     [SerializeField] private Color unselected, selected;
     [SerializeField] private int direction;
-    [SerializeField] private List<GameObject> Buttons = new List<GameObject>();
+    [SerializeField] private List<GameObject> buttons = new List<GameObject>();
     [SerializeField] private Image currentSprite;
 
+    private void Awake() 
+    {
+        audiomanager = FindObjectOfType<AudioManager>();
+    }
 
     private void Start() 
     {
@@ -22,7 +27,7 @@ public class SelectionLogic : MonoBehaviour
         {
             //move right
             direction++;
-            if (direction == Buttons.Count) 
+            if (direction == buttons.Count) 
             {
                 direction = 0;
             }
@@ -34,20 +39,20 @@ public class SelectionLogic : MonoBehaviour
             direction--;
             if (direction == -1) 
             {
-                direction = Buttons.Count -1;
+                direction = buttons.Count -1;
             }
             UpdateDirection();
         }
     }
     private void UpdateDirection() 
     {
-        FindObjectOfType<AudioManager>().Play("Blip");
-        currentSprite = Buttons[direction].GetComponent<Image>();
+        audiomanager.Play("Blip");
+        currentSprite = buttons[direction].GetComponent<Image>();
         SetSelectedButton();
     }
     private void SetSelectedButton() 
     {
-        foreach (GameObject button in Buttons) 
+        foreach (GameObject button in buttons) 
         {
             button.GetComponent<Image>().color = selected;
         }
