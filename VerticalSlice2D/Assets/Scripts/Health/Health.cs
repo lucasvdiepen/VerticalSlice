@@ -7,12 +7,12 @@ public class Health : MonoBehaviour
     public int curHealth = 0;
     public int maxHealth = 100;
 
-    void Start()
+    private void Start()
     {
         curHealth = maxHealth;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

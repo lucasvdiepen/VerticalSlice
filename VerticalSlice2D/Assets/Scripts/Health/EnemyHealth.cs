@@ -9,6 +9,7 @@ public class EnemyHealth : Health
 {
     public TextMeshProUGUI healthText;
     public Slider slider;
+
     protected override void HandleTakeDamage()
     {
 

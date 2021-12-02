@@ -8,6 +8,7 @@ public class PlayerHealth : Health
 {
     public TextMeshProUGUI healthText;
     public Slider slider;
+
     protected override void HandleTakeDamage()
     {
         base.HandleTakeDamage();
@@ -18,6 +19,6 @@ public class PlayerHealth : Health
     protected override void HandleDeath()
     {
         base.HandleDeath();
-        print("Erg fucking dood");
+        print("Erg dood");
     }
 }
