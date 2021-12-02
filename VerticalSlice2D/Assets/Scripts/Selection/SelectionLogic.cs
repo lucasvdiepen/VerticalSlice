@@ -11,36 +11,44 @@ public class SelectionLogic : MonoBehaviour
     [SerializeField] private Image currentSprite;
 
 
-    private void Start() {
+    private void Start() 
+    {
         UpdateDirection();
     }
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow)){
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
             //move right
             direction++;
-            if (direction == Buttons.Count) {
+            if (direction == Buttons.Count) 
+            {
                 direction = 0;
             }
             UpdateDirection();
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) 
+        {
             //move left
             direction--;
-            if (direction == -1) {
-                direction = Buttons.Count -1 ;
+            if (direction == -1) 
+            {
+                direction = Buttons.Count -1;
             }
             UpdateDirection();
         }
     }
-    private void UpdateDirection() {
+    private void UpdateDirection() 
+    {
         FindObjectOfType<AudioManager>().Play("Blip");
         currentSprite = Buttons[direction].GetComponent<Image>();
         SetSelectedButton();
     }
-    private void SetSelectedButton() {
-        foreach (GameObject button in Buttons) {
+    private void SetSelectedButton() 
+    {
+        foreach (GameObject button in Buttons) 
+        {
             button.GetComponent<Image>().color = selected;
         }
         currentSprite.color = unselected;
