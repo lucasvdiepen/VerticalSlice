@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SelectionLogic : MonoBehaviour
 {
-    private AudioManager audiomanager;
+    private AudioManager audioManager;
     [SerializeField] private Color unselected, selected;
     [SerializeField] private int direction;
     [SerializeField] private List<GameObject> buttons = new List<GameObject>();
@@ -13,7 +13,7 @@ public class SelectionLogic : MonoBehaviour
 
     private void Awake() 
     {
-        audiomanager = FindObjectOfType<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Start() 
@@ -46,7 +46,7 @@ public class SelectionLogic : MonoBehaviour
     }
     private void UpdateDirection() 
     {
-        audiomanager.Play("Blip");
+        audioManager.Play("Blip");
         currentSprite = buttons[direction].GetComponent<Image>();
         SetSelectedButton();
     }
