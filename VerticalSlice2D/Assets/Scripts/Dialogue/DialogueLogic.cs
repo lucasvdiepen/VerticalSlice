@@ -29,7 +29,7 @@ public class DialogueLogic : MonoBehaviour
     }
     private void StartDialogue() 
     {
-        if(dialogueObj.typeOfDialogue == dialogueType.SpeechBubble) 
+        if(dialogueObj.typeOfDialogue == dialogueType.speechBubble) 
         {
             StartCoroutine(TriggerDialogue(true));
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum dialogueType { SpeechBubble, SpeechHeader }
+public enum dialogueType { speechBubble, speechHeader }
 
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "NewDialogue")]
 public class Dialogue : ScriptableObject
