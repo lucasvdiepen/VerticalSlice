@@ -13,7 +13,7 @@ public class EnemyHealth : Health
     {
 
         base.HandleTakeDamage();
-        //Run "damaged"
+        //Run "damaged" animatie
         healthText.text = curHealth.ToString() + " % ";
         slider.value = (float)curHealth / (float)maxHealth * 100;
     }
