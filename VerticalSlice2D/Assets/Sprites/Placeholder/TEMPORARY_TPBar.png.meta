@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -5671602102728715429
     second: TEMPORARY_TPBar_2
+  - first:
+      213: -5121515738124498372
+    second: TEMPORARY_TPBar_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +44,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -222,7 +225,7 @@ TextureImporter:
         width: 28
         height: 280
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,6 +233,27 @@ TextureImporter:
       bones: []
       spriteID: b531f7fdfeb6a41b0800000000000000
       internalID: -5671602102728715429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TEMPORARY_TPBar_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 2
+        width: 28
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a44853298bce8b0800000000000000
+      internalID: -5121515738124498372
       vertices: []
       indices: 
       edges: []

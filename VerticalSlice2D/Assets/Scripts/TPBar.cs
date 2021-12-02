@@ -7,6 +7,9 @@ public class TPBar : MonoBehaviour
 {
     private float startingY;
     [SerializeField] private TextMeshProUGUI TPText;
+    [SerializeField] private GameObject OrangeTPBar;
+    [SerializeField] private GameObject MAX;
+    [SerializeField] private GameObject TPPercentage;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +37,18 @@ public class TPBar : MonoBehaviour
         
         if (player.TP < 100)
         {
-            TPText.text = "<i>T\nP\n</i>" + player.TP.ToString() + "\n%";
+            TPText.text = player.TP.ToString();
+            OrangeTPBar.SetActive(true);
+            MAX.SetActive(false);
+            TPPercentage.SetActive(true);
         }
        
         if (player.TP >= 100)
         {
-            TPText.text = "<i>T\nP\n</i>" + "<color=yellow>M\n A\n  X</color>";
+            TPText.text = "";
+            OrangeTPBar.SetActive(false);
+            MAX.SetActive(true);
+            TPPercentage.SetActive(false);
         }
     }
 
