@@ -8,11 +8,6 @@ public class SoundWave : MonoBehaviour
     private bool soundWaveStarted = false;
     private Vector2 diff;
 
-    private void Start()
-    {
-        StartSoundWave(new Vector2(-1, 1), 3f);
-    }
-
     public void StartSoundWave(Vector2 target, float speed)
     {
         this.speed = speed;
@@ -24,6 +19,8 @@ public class SoundWave : MonoBehaviour
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        Destroy(gameObject, 5f);
     }
 
     private void Update()
