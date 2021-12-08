@@ -17,6 +17,11 @@ public class BallAttack : MonoBehaviour
     private bool isAttacking = false;
     private float lastSpawnTime = 0;
 
+    private void Start()
+    {
+        StartAttack();
+    }
+
     public void StartAttack()
     {
         isAttacking = true;
