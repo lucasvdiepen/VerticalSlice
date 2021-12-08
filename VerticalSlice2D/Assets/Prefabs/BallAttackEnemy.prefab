@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52d8dcdc6dc9b44ca4987c879645d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   spawnPoint: {fileID: 6814659736190892951}
   ball: {fileID: 4404502529504408938, guid: 5b4a58078088fd7459e5386c5ea7b739, type: 3}
   ballHeight: 5
