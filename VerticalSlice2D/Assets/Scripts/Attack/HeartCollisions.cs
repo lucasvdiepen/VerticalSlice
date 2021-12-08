@@ -4,30 +4,27 @@ using UnityEngine;
 
 public class HeartCollisions : MonoBehaviour
 {
-    private bool isInvisible = false;
-    private float lastInvisibleTime = 0;
-    private float invisibiltyTime = 0;
+    private HeartInvisibility heartInvisibility;
 
-    private void Update()
+    private void Start()
     {
-        
+        heartInvisibility = GetComponent<HeartInvisibility>();
     }
 
-    public void EnableInvisibility(float time)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        lastInvisibleTime = Time.time;
-    }
-
-    public void DisableInvisibility()
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.transform.tag == "Ball")
+        if (collision.transform.tag == "Ball")
         {
+            if(!heartInvisibility.IsInvisible())
+            {
+                //Deal damage here
 
+                heartInvisibility.EnableInvisibility();
+
+                Destroy(collision.gameObject);
+            }
+
+            
         }
     }
 }
