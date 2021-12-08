@@ -8,7 +8,7 @@ public class Mercy : MonoBehaviour
 {
     public TextMeshProUGUI mercyText;
     public Slider slider;
-    public int curMercy;
+    private int curMercy;
     public int maxMercy;
 
     public void Start()
