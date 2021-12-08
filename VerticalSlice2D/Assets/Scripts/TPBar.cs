@@ -6,10 +6,10 @@ using TMPro;
 public class TPBar : MonoBehaviour
 {
     private float startingY;
-    [SerializeField] private TextMeshProUGUI TPText;
-    [SerializeField] private GameObject OrangeTPBar;
-    [SerializeField] private GameObject MAX;
-    [SerializeField] private GameObject TPPercentage;
+    [SerializeField] private TextMeshProUGUI tpText;
+    [SerializeField] private GameObject orangeTPBar;
+    [SerializeField] private GameObject max;
+    [SerializeField] private GameObject tpPercentage;
 
     // Start is called before the first frame update
     void Start()
@@ -37,18 +37,18 @@ public class TPBar : MonoBehaviour
         
         if (player.TP < 100)
         {
-            TPText.text = player.TP.ToString();
-            OrangeTPBar.SetActive(true);
-            MAX.SetActive(false);
-            TPPercentage.SetActive(true);
+            tpText.text = player.TP.ToString();
+            orangeTPBar.SetActive(true);
+            max.SetActive(false);
+            tpPercentage.SetActive(true);
         }
        
         if (player.TP >= 100)
         {
-            TPText.text = "";
-            OrangeTPBar.SetActive(false);
-            MAX.SetActive(true);
-            TPPercentage.SetActive(false);
+            tpText.text = "";
+            orangeTPBar.SetActive(false);
+            max.SetActive(true);
+            tpPercentage.SetActive(false);
         }
     }
 
