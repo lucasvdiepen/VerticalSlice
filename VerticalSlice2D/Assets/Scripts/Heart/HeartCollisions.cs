@@ -13,7 +13,7 @@ public class HeartCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Ball")
+        if (collision.transform.CompareTag("Ball"))
         {
             if(!heartInvisibility.IsInvisible())
             {
