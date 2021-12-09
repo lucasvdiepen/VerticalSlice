@@ -759,7 +759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656229475}
-  - component: {fileID: 656229476}
+  - component: {fileID: 656229477}
   m_Layer: 5
   m_Name: Selection
   m_TagString: Untagged
@@ -788,7 +788,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &656229476
+--- !u!114 &656229477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -797,9 +797,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 656229474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bff806adb9be09409eb2356bc857174, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f13207af0d563f498b3ef4a5a9af886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisCharacter: {fileID: 0}
   unselected: {r: 0, g: 0, b: 0, a: 1}
   selected: {r: 1, g: 0, b: 0, a: 1}
   direction: 0
@@ -807,6 +808,9 @@ MonoBehaviour:
   - {fileID: 93797535}
   - {fileID: 1059963739}
   currentSprite: {fileID: 0}
+  onExecutebuttons:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &752610894
 GameObject:
   m_ObjectHideFlags: 0

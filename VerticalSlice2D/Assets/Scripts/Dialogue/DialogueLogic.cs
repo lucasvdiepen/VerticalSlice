@@ -52,7 +52,13 @@ public class DialogueLogic : MonoBehaviour
         else 
         {
             //speech header
-            imageToChange.sprite = dialogueObj.talkingHead;
+            if(dialogueObj.talkingHead != null) {
+                imageToChange.color = Color.white;
+                imageToChange.sprite = dialogueObj.talkingHead;
+            }
+            else {
+                imageToChange.color = new Color(0, 0, 0, 0);
+            }
             dialogueSpeechHeader.SetActive(true);
             dialogueSpeechBubble.SetActive(false);
         }
