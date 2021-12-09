@@ -4,15 +4,55 @@ using UnityEngine;
 
 public class HeartProximity : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float fadeTime = 0.4f;
+    [SerializeField] private float showTime = 1f;
+    [SerializeField] private SpriteRenderer heartLine;
+
+    private bool isFading = false;
+    private bool isWaitingForHide = false;
+    private float timeElapsed = 0;
+    private float lastShowTime = 0;
+
+    private void Update()
     {
-        
+        CheckFade();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowLine()
     {
-        
+        heartLine.gameObject.SetActive(true);
+        heartLine.color = new Color(0, 0, 0, 1f);
+        isFading = false;
+        isWaitingForHide = true;
+    }
+
+    public void HideLine()
+    {
+        timeElapsed = 0;
+        isFading = true;
+    }
+
+    private void CheckWaitingForHide()
+    {
+        if(isWaitingForHide)
+        {
+            if(Time.time >= lastShowTime + showTime)
+            {
+
+            }
+        }
+    }
+
+    private void CheckFade()
+    {
+        if(isFading)
+        {
+            timeElapsed += Time.deltaTime;
+            heartLine.color = new Color(0, 0, 0, Mathf.Lerp(1f, 0f, timeElapsed / fadeTime));
+            if(timeElapsed >= fadeTime)
+            {
+                isFading = false;
+            }
+        }
     }
 }
