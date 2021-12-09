@@ -28,7 +28,6 @@ public class TPBar : MonoBehaviour
 
     private void UpdateTextAndTp()
     {
-
         if (tp < 0)
         {
             tp = 0;
