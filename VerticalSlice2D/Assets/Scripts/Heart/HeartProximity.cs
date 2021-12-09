@@ -37,7 +37,6 @@ public class HeartProximity : MonoBehaviour
 
     public void ShowLine()
     {
-        heartLine.gameObject.SetActive(true);
         heartLine.color = new Color(1f, 1f, 1f, 1f);
         lastShowTime = Time.time;
         isFading = false;
