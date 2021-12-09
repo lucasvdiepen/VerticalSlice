@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SelectionLogic : MonoBehaviour
 {
-    private string character;
+    [HideInInspector] public string character;
     private AudioManager audioManager;
     [SerializeField] private Color unselected, selected;
     [SerializeField] private int direction;
