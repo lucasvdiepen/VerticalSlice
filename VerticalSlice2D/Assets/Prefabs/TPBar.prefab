@@ -963,10 +963,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757ba2c1291ff4846b2136c0c151fcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tpText: {fileID: 0}
-  orangeTPBar: {fileID: 0}
-  max: {fileID: 0}
-  tpPercentage: {fileID: 0}
+  tp: 0
+  tpText: {fileID: 6380462150442216671}
+  orangeTPBar: {fileID: 1464556113561200680}
+  max: {fileID: 4593651541836620303}
+  tpPercentage: {fileID: 9004325564709785427}
+  spriteMask: {fileID: 2622800265287700187}
 --- !u!1 &6682335082702320459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7947792802383872610}
   m_Layer: 0
-  m_Name: TPBar (1)
+  m_Name: TPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

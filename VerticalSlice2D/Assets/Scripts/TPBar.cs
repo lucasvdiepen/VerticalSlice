@@ -14,20 +14,19 @@ public class TPBar : MonoBehaviour
     [SerializeField] Transform spriteMask;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    private void Start()
+    {   
         startingY = spriteMask.position.y;
     }
 
-    void UpdateSprite()
+    private void UpdateSprite()
     {
         //this is very precise and hopefully still works after moving it please dont kill me
         spriteMask.position = new Vector2(spriteMask.position.x, startingY+(0.02805f*tp));
         //0.02805f is de sprite hoogte. Zodra wij sprites krijgen MOET DIT AANGEPAST WORDEN OM GOED TE WERKEN. Ik zou er een functie voor maken maar ik gebruik hier geen spriterenderer, dus kan ik niet de grootte aanroepen.
     }
 
-    void UpdateTextAndTp()
+    private void UpdateTextAndTp()
     {
 
         if (tp < 0)
@@ -53,22 +52,16 @@ public class TPBar : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void AddTp(float amount)
     {
         tp += amount;
-        UpdateSprite();
         UpdateTextAndTp();
+        UpdateSprite();       
     }
     public void RemoveTp(float amount)
     {
         tp -= amount;
-        UpdateSprite();
         UpdateTextAndTp();
+        UpdateSprite();
     }
 }

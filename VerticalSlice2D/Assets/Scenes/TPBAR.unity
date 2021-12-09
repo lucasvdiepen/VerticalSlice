@@ -206,32 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &358685289 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2622800265287700187, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-  m_PrefabInstance: {fileID: 6179038114146180272}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &404731514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9004325564709785427, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-  m_PrefabInstance: {fileID: 6179038114146180272}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &822992747 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6380462150442216671, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-  m_PrefabInstance: {fileID: 6179038114146180272}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1249046494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4593651541836620303, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-  m_PrefabInstance: {fileID: 6179038114146180272}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1585400306
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,11 +272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1593103438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1464556113561200680, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-  m_PrefabInstance: {fileID: 6179038114146180272}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6179038114146180272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,26 +279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4904715943321596837, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-      propertyPath: max
-      value: 
-      objectReference: {fileID: 1249046494}
-    - target: {fileID: 4904715943321596837, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-      propertyPath: tpText
-      value: 
-      objectReference: {fileID: 822992747}
-    - target: {fileID: 4904715943321596837, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-      propertyPath: spriteMask
-      value: 
-      objectReference: {fileID: 358685289}
-    - target: {fileID: 4904715943321596837, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-      propertyPath: orangeTPBar
-      value: 
-      objectReference: {fileID: 1593103438}
-    - target: {fileID: 4904715943321596837, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
-      propertyPath: tpPercentage
-      value: 
-      objectReference: {fileID: 404731514}
     - target: {fileID: 7010520973843658362, guid: 1519cc265c5fd354492d49de32d90969, type: 3}
       propertyPath: m_Camera
       value: 
