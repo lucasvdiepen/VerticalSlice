@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActSelectionLogic : Menu
+public class ActMenu : Menu
 {
     public override void RunInput()
     {
