@@ -6,7 +6,9 @@ public class HeartProximity : MonoBehaviour
 {
     [SerializeField] private float fadeTime = 0.4f;
     [SerializeField] private float showTime = 1f;
+    [SerializeField] private float proximityRange = 0.25f;
     [SerializeField] private SpriteRenderer heartLine;
+    [SerializeField] private LayerMask bulletsLayer;
 
     private bool isFading = false;
     private bool isWaitingForHide = false;
@@ -15,18 +17,36 @@ public class HeartProximity : MonoBehaviour
 
     private void Update()
     {
+        CheckNearbyBullets();
+
+        CheckWaitingForHide();
         CheckFade();
+    }
+
+    private void CheckNearbyBullets()
+    {
+        Collider2D[] nearbyBullets = Physics2D.OverlapCircleAll(transform.position, proximityRange, bulletsLayer);
+        if (nearbyBullets.Length > 0) ShowLine();
+
+        Debug.Log(nearbyBullets.Length);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, proximityRange);
     }
 
     public void ShowLine()
     {
         heartLine.gameObject.SetActive(true);
-        heartLine.color = new Color(0, 0, 0, 1f);
+        heartLine.color = new Color(1f, 1f, 1f, 1f);
+        lastShowTime = Time.time;
         isFading = false;
         isWaitingForHide = true;
     }
 
-    public void HideLine()
+    private void HideLine()
     {
         timeElapsed = 0;
         isFading = true;
@@ -38,7 +58,8 @@ public class HeartProximity : MonoBehaviour
         {
             if(Time.time >= lastShowTime + showTime)
             {
-
+                isWaitingForHide = false;
+                HideLine();
             }
         }
     }
@@ -48,7 +69,7 @@ public class HeartProximity : MonoBehaviour
         if(isFading)
         {
             timeElapsed += Time.deltaTime;
-            heartLine.color = new Color(0, 0, 0, Mathf.Lerp(1f, 0f, timeElapsed / fadeTime));
+            heartLine.color = new Color(1f, 1f, 1f, Mathf.Lerp(1f, 0f, timeElapsed / fadeTime));
             if(timeElapsed >= fadeTime)
             {
                 isFading = false;
