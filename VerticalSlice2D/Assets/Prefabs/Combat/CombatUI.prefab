@@ -265,8 +265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -883, y: -60.999985}
-  m_SizeDelta: {x: 53.3408, y: 53.3408}
+  m_AnchoredPosition: {x: -883, y: 24.000053}
+  m_SizeDelta: {x: 80.51, y: 63.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4668514584360225152
 CanvasRenderer:
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 654526f7bb1fbb4418af091193c9a5e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -522,7 +522,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &4668514584741916479
 MonoBehaviour:
@@ -819,8 +819,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.7917, y: -285.36}
-  m_SizeDelta: {x: 1939.28, y: 506.88}
+  m_AnchoredPosition: {x: 6.7917, y: -377.67}
+  m_SizeDelta: {x: 1939.28, y: 322.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4668514585437007676
 CanvasRenderer:
@@ -919,8 +919,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -883, y: 57.000015}
-  m_SizeDelta: {x: 53.3408, y: 53.3408}
+  m_AnchoredPosition: {x: -883, y: 142.00006}
+  m_SizeDelta: {x: 80.51, y: 64.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4668514585524150485
 CanvasRenderer:
@@ -943,14 +943,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.22773442, b: 0.77254903, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a42c3fe08205a174e98929594be39152, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -997,8 +997,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -883, y: -184}
-  m_SizeDelta: {x: 53.3408, y: 53.3408}
+  m_AnchoredPosition: {x: -883, y: -99}
+  m_SizeDelta: {x: 80.51, y: 63.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4668514585529032660
 CanvasRenderer:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 684b50d21aa42574a82e36d8f2644f4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1238,7 +1238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4668514585783545027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1371,7 +1371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4668514585885549259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1491,10 +1491,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4668514585306714876}
     m_Modifications:
+    - target: {fileID: 230099871, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218814793, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1665967361, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
       propertyPath: blinkingSlider
       value: 
       objectReference: {fileID: 5884306099720160159, guid: ae92041dbf3771643966f5e97bcc0717, type: 3}
+    - target: {fileID: 1871031705, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5242069871269823516, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1608,10 +1620,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4668514585787857766}
     m_Modifications:
+    - target: {fileID: 230099871, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218814793, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1665967361, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
       propertyPath: blinkingSlider
       value: 
       objectReference: {fileID: 5884306099720160159, guid: ae92041dbf3771643966f5e97bcc0717, type: 3}
+    - target: {fileID: 1871031705, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5242069871269823516, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1731,10 +1755,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4668514584284567629}
     m_Modifications:
+    - target: {fileID: 230099871, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218814793, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1665967361, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
       propertyPath: blinkingSlider
       value: 
       objectReference: {fileID: 5884306099720160159, guid: ae92041dbf3771643966f5e97bcc0717, type: 3}
+    - target: {fileID: 1871031705, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5242069871269823516, guid: 8fac3e7f1fe28dd4382e29eea9f83155, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

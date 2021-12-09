@@ -844,33 +844,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5547733377241311665, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -806.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547733377241311665, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547733377241311665, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 227.65
-      objectReference: {fileID: 0}
     - target: {fileID: 5547733378144992144, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
       propertyPath: m_Name
       value: DialogueUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547733378144992146, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547733378144992146, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547733378144992146, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 5547733378144992156, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
       propertyPath: m_Pivot.x
@@ -960,18 +936,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1443679256}
-    - target: {fileID: 5547733378144992157, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547733378213342463, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -683
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547733378216449397, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11b079b40616724c8a555f4bfbcf058, type: 3}
 --- !u!1 &1853997113
