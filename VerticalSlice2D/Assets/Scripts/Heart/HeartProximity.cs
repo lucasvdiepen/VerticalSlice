@@ -27,8 +27,6 @@ public class HeartProximity : MonoBehaviour
     {
         Collider2D[] nearbyBullets = Physics2D.OverlapCircleAll(transform.position, proximityRange, bulletsLayer);
         if (nearbyBullets.Length > 0) ShowLine();
-
-        Debug.Log(nearbyBullets.Length);
     }
 
     private void OnDrawGizmosSelected()
