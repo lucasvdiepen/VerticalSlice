@@ -6,16 +6,17 @@ using UnityEngine.Events;
 
 public class EnemySelectionLogic : MonoBehaviour
 {
-    private string character;
+    private GameObject selectedEnemy;
     private AudioManager audioManager;
     [SerializeField] private GameObject thisCharacter;
+    [SerializeField] private GameObject[] enemies;
     [SerializeField] private Color unselected, selected;
     [SerializeField] private int direction;
     [SerializeField] private List<GameObject> buttons = new List<GameObject>();
     [SerializeField] private Image currentSprite;
 
+
     private void Awake() {
-        character = thisCharacter.tag;
         audioManager = FindObjectOfType<AudioManager>();
     }
 
@@ -58,11 +59,18 @@ public class EnemySelectionLogic : MonoBehaviour
     private void ExecuteButton() {
         if(currentSprite == buttons[1].GetComponent<Image>()) {
             //first enemy
-            print("second enemy");
+            selectedEnemy = enemies[1];
         }
         else if(currentSprite == buttons[0].GetComponent<Image>()){
             //seceond enemy
-            print("first enemy");
+            selectedEnemy = enemies[0];
         }
+        transform.parent.gameObject.SetActive(false);
+    }
+    public GameObject GetSelectedEnemy() {
+        return selectedEnemy;
+    }
+    public GameObject GetPerson() {
+        return thisCharacter;
     }
 }
