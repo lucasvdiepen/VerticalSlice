@@ -22,8 +22,6 @@ public class TPBar : MonoBehaviour
 
     void UpdateSprite()
     {
-        Transform spriteMask = GameObject.Find("TPBar_Spritemask").GetComponent<Transform>();
-
         //this is very precise and hopefully still works after moving it please dont kill me
         spriteMask.position = new Vector2(spriteMask.position.x, startingY+(0.02805f*TP));
         //0.02805f is de sprite hoogte. Zodra wij sprites krijgen MOET DIT AANGEPAST WORDEN OM GOED TE WERKEN. Ik zou er een functie voor maken maar ik gebruik hier geen spriterenderer, dus kan ik niet de grootte aanroepen.
@@ -58,12 +56,13 @@ public class TPBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateSprite();
-        UpdateTextAndTP();
+        
     }
 
-    public void AddTP(float functionTP)
+    public void AddTP(float amount)
     {
-        TP = TP + functionTP;
+        TP += amount;
+        UpdateSprite();
+        UpdateTextAndTP();
     }
 }
