@@ -424,5 +424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e26c47d78e8814191e893c290d8a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTime: 0.4
   showTime: 1
   heartLine: {fileID: 503632287}
