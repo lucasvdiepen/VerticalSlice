@@ -5,7 +5,7 @@ using TMPro;
 
 public class TPBar : MonoBehaviour
 {
-    public float TP = 0;
+    public float tp = 0;
     private float startingY;
     [SerializeField] private TextMeshProUGUI tpText;
     [SerializeField] private GameObject orangeTPBar;
@@ -23,29 +23,29 @@ public class TPBar : MonoBehaviour
     void UpdateSprite()
     {
         //this is very precise and hopefully still works after moving it please dont kill me
-        spriteMask.position = new Vector2(spriteMask.position.x, startingY+(0.02805f*TP));
+        spriteMask.position = new Vector2(spriteMask.position.x, startingY+(0.02805f*tp));
         //0.02805f is de sprite hoogte. Zodra wij sprites krijgen MOET DIT AANGEPAST WORDEN OM GOED TE WERKEN. Ik zou er een functie voor maken maar ik gebruik hier geen spriterenderer, dus kan ik niet de grootte aanroepen.
     }
 
-    void UpdateTextAndTP()
+    void UpdateTextAndTp()
     {
 
-        if (TP < 0)
+        if (tp < 0)
         {
-            TP = 0;
+            tp = 0;
         }
         
-        if (TP < 100)
+        if (tp < 100)
         {
-            tpText.text = TP.ToString();
+            tpText.text = tp.ToString();
             orangeTPBar.SetActive(true);
             max.SetActive(false);
             tpPercentage.SetActive(true);
         }
        
-        if (TP >= 100)
+        if (tp >= 100)
         {
-            TP = 100;
+            tp = 100;
             tpText.text = "";
             orangeTPBar.SetActive(false);
             max.SetActive(true);
@@ -59,10 +59,16 @@ public class TPBar : MonoBehaviour
         
     }
 
-    public void AddTP(float amount)
+    public void AddTp(float amount)
     {
-        TP += amount;
+        tp += amount;
         UpdateSprite();
-        UpdateTextAndTP();
+        UpdateTextAndTp();
+    }
+    public void RemoveTp(float amount)
+    {
+        tp -= amount;
+        UpdateSprite();
+        UpdateTextAndTp();
     }
 }
