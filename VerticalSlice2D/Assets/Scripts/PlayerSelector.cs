@@ -47,6 +47,11 @@ public class PlayerSelector : MonoBehaviour
         players[currentPlayer].GetComponent<SelectionLogic>().OpenMenu();
     }
 
+    public void ButtonPressed(ActionSaveManager.Action actionType)
+    {
+
+    }
+
     public void PlayersDone()
     {
         currentPlayer = -1;
