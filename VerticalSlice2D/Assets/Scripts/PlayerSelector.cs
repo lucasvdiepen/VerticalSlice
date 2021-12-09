@@ -13,12 +13,20 @@ public class PlayerSelector : MonoBehaviour
         NextPlayer();
     }
 
+    private void Update()
+    {
+        //for testing
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            NextPlayer();
+        }
+    }
+
     public void NextPlayer()
     {
-        //players[currentPlayer].GetComponent<SelectionLogic>() Close menu
+        if(currentPlayer >= 0) players[currentPlayer].GetComponent<SelectionLogic>().CloseMenu();
 
         currentPlayer++;
-        SelectionLogic currentPlayerSelectionLogic = players[currentPlayer].GetComponent<SelectionLogic>();
 
         if (currentPlayer >= players.Length)
         {
@@ -26,13 +34,17 @@ public class PlayerSelector : MonoBehaviour
             return;
         }
 
+        SelectionLogic currentPlayerSelectionLogic = players[currentPlayer].GetComponent<SelectionLogic>();
+
         if (HasPlayerDoneAction(currentPlayerSelectionLogic.character))
         {
             NextPlayer();
             return;
         }
+        
 
         //Open menu
+        players[currentPlayer].GetComponent<SelectionLogic>().OpenMenu();
     }
 
     public void PlayersDone()
