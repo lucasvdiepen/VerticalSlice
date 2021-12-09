@@ -7,6 +7,7 @@ public class ActionSaveManager : MonoBehaviour
     public enum ActionType
     {
         Fight,
+        Act,
         Roar,
         SoftVoice,
         Spare,
@@ -54,6 +55,18 @@ public class ActionSaveManager : MonoBehaviour
         if(actionType == ActionType.SoftVoice)
         {
             actions.Add(new Action("Ralsei", ActionType.Nothing));
+        }
+    }
+
+    public void ChangeCurrentPlayerAction(ActionType actionType)
+    {
+        for(int i = 0; i < actions.Count; i++)
+        {
+            if(actions[i].playerName == currentPlayerName)
+            {
+                actions[i].actionType = actionType;
+                return;
+            }
         }
     }
 

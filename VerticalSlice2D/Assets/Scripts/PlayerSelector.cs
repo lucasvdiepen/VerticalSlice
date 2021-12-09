@@ -41,7 +41,6 @@ public class PlayerSelector : MonoBehaviour
             NextPlayer();
             return;
         }
-        
 
         //Open menu
         players[currentPlayer].GetComponent<SelectionLogic>().OpenMenu();

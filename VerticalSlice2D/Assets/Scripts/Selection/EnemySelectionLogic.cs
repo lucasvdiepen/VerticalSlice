@@ -60,10 +60,12 @@ public class EnemySelectionLogic : MonoBehaviour
         if(currentSprite == buttons[1].GetComponent<Image>()) {
             //first enemy
             selectedEnemy = enemies[1];
+            FindObjectOfType<ActionSaveManager>().AddEnemyTarget(enemies[1]);
         }
         else if(currentSprite == buttons[0].GetComponent<Image>()){
             //seceond enemy
             selectedEnemy = enemies[0];
+            FindObjectOfType<ActionSaveManager>().AddEnemyTarget(enemies[0]);
         }
         transform.parent.gameObject.SetActive(false);
     }
