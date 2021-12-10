@@ -24,8 +24,14 @@ public class GameManager : MonoBehaviour
         {
             case ActionSaveManager.ActionType.Fight:
                 //Start fight script
+                StartCoroutine(FindObjectOfType<CombatLogic>().StartCombat());
                 break;
         }
+    }
+
+    public GameObject GetCurrentEnemy()
+    {
+        return FindObjectOfType<ActionSaveManager>().GetActions()[currentActionIndex].enemyObject;
     }
 
     private void ActionsDone()

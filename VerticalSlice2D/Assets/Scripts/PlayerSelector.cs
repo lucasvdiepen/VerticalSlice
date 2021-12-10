@@ -56,6 +56,7 @@ public class PlayerSelector : MonoBehaviour
         currentPlayer = -1;
 
         //Game manager can now process all actions
+        FindObjectOfType<GameManager>().DoNextAction();
     }
 
     private bool HasPlayerDoneAction(string player)

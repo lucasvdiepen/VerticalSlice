@@ -18,7 +18,7 @@ public class ActionSaveManager : MonoBehaviour
     public class Action
     {
         public string playerName;
-        public GameObject enemyId;
+        public GameObject enemyObject;
         public ActionType actionType;
 
         public Action(string playerName, ActionType actionType)
@@ -29,7 +29,7 @@ public class ActionSaveManager : MonoBehaviour
 
         public void AddEnemyTarget(GameObject enemyId)
         {
-            this.enemyId = enemyId;
+            this.enemyObject = enemyId;
         }
     }
 
