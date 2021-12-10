@@ -91,4 +91,9 @@ public class ActionSaveManager : MonoBehaviour
 
         return null;
     }
+
+    public List<Action> GetActions()
+    {
+        return actions;
+    }
 }
