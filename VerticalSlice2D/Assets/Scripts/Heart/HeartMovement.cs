@@ -37,4 +37,9 @@ public class HeartMovement : MonoBehaviour
 
         transform.position = newPosition;
     }
+
+    public void ResetPosition()
+    {
+        transform.position = Vector3.zero;
+    }
 }
