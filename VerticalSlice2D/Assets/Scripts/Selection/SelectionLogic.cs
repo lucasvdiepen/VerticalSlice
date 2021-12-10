@@ -9,10 +9,12 @@ public class SelectionLogic : MonoBehaviour
     private bool canSelect;
     private AudioManager audioManager;
     [SerializeField] private Color unselected, selected;
-    [SerializeField] private int direction;
+    [SerializeField] private int direction = 0;
     [SerializeField] private List<GameObject> buttons = new List<GameObject>();
     [SerializeField] private Image currentSprite;
     [SerializeField] private Animator selectionAnim;
+    [SerializeField] private Menu enemyMenu;
+    [SerializeField] private Menu actMenu;
 
     private void Awake() 
     {
@@ -50,8 +52,44 @@ public class SelectionLogic : MonoBehaviour
                 }
                 UpdateDirection();
             }
+
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                ExecuteButton();
+            }
         }
     }
+
+    private void ExecuteButton()
+    {
+        switch(direction)
+        {
+            case 0:
+                //Fight
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Fight);
+                canSelect = false;
+                enemyMenu.OpenMenu();
+                break;
+            case 1:
+                //Act
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Act);
+                canSelect = false;
+                enemyMenu.OpenMenu();
+                break;
+            case 2:
+                //Items
+                break;
+            case 3:
+                //Spare
+                break;
+            case 4:
+                //Defend
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Defend);
+                FindObjectOfType<PlayerSelector>().NextPlayer();
+                break;
+        }
+    }
+
     private void UpdateDirection() 
     {
         //audioManager.Play("Blip");

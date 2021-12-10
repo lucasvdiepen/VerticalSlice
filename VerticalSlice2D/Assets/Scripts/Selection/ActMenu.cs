@@ -29,8 +29,9 @@ public class ActMenu : Menu
         switch (selectedButton)
         {
             case 3:
-                CloseMenu();
                 FindObjectOfType<ActionSaveManager>().ChangeCurrentPlayerAction(ActionSaveManager.ActionType.SoftVoice);
+                CloseMenu();
+                FindObjectOfType<PlayerSelector>().NextPlayer();
                 break;
         }
     }

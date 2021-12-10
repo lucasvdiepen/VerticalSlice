@@ -74,8 +74,21 @@ public class ActionSaveManager : MonoBehaviour
     {
         for(int i = 0; i < actions.Count; i++)
         {
-            if (actions[i].playerName == currentPlayerName) actions[i].AddEnemyTarget(enemyId);
-            break;
+            if (actions[i].playerName == currentPlayerName)
+            {
+                actions[i].AddEnemyTarget(enemyId);
+                break;
+            }
         }
+    }
+
+    public ActionType? GetCurrentAction()
+    {
+        for (int i = 0; i < actions.Count; i++)
+        {
+            if (actions[i].playerName == currentPlayerName) return actions[i].actionType;
+        }
+
+        return null;
     }
 }

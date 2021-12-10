@@ -9,5 +9,16 @@ public class EnemyMenu : Menu
     public override void ExecuteButton()
     {
         FindObjectOfType<ActionSaveManager>().AddEnemyTarget(enemies[selectedButton]);
+
+        if(FindObjectOfType<ActionSaveManager>().GetCurrentAction() == ActionSaveManager.ActionType.Act)
+        {
+            FindObjectOfType<ActMenu>().OpenMenu();
+        }
+        else
+        {
+            FindObjectOfType<PlayerSelector>().NextPlayer();
+        }
+
+        CloseMenu();
     }
 }

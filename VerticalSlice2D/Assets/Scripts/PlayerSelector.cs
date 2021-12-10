@@ -18,7 +18,7 @@ public class PlayerSelector : MonoBehaviour
         //for testing
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            NextPlayer();
+            //NextPlayer();
         }
     }
 
