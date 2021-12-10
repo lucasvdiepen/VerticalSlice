@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1531264}
   - component: {fileID: 1531263}
   m_Layer: 5
-  m_Name: SelectionButton
+  m_Name: SelectionButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 57018337}
   - component: {fileID: 57018336}
   m_Layer: 5
-  m_Name: SelectionButton5
+  m_Name: SelectionButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 71033221}
   m_Layer: 5
   m_Name: SelectionManager (1)
-  m_TagString: Untagged
+  m_TagString: Susie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,13 +210,15 @@ MonoBehaviour:
   selected: {r: 0.9803922, g: 0.6313726, b: 0.10588236, a: 1}
   direction: 0
   buttons:
+  - {fileID: 1051801688}
   - {fileID: 2095471954}
   - {fileID: 1866308853}
   - {fileID: 1724293048}
   - {fileID: 1858272639}
-  - {fileID: 1051801688}
   currentSprite: {fileID: 2095471956}
   selectionAnim: {fileID: 1144505837}
+  enemyMenu: {fileID: 0}
+  actMenu: {fileID: 0}
 --- !u!1 &710650986
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +231,7 @@ GameObject:
   - component: {fileID: 710650988}
   m_Layer: 5
   m_Name: SelectionManager (2)
-  m_TagString: Untagged
+  m_TagString: Ralsei
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,13 +279,15 @@ MonoBehaviour:
   selected: {r: 0.9803922, g: 0.6313726, b: 0.10588236, a: 1}
   direction: 0
   buttons:
+  - {fileID: 57018334}
   - {fileID: 1531261}
   - {fileID: 1852121621}
   - {fileID: 1038584982}
   - {fileID: 948294796}
-  - {fileID: 57018334}
   currentSprite: {fileID: 1531263}
   selectionAnim: {fileID: 1854643780}
+  enemyMenu: {fileID: 0}
+  actMenu: {fileID: 0}
 --- !u!1 &791715316
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +391,7 @@ GameObject:
   - component: {fileID: 948294799}
   - component: {fileID: 948294798}
   m_Layer: 5
-  m_Name: SelectionButton3
+  m_Name: SelectionButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,7 +466,7 @@ GameObject:
   - component: {fileID: 1038584985}
   - component: {fileID: 1038584984}
   m_Layer: 5
-  m_Name: SelectionButton2
+  m_Name: SelectionButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +541,7 @@ GameObject:
   - component: {fileID: 1051801691}
   - component: {fileID: 1051801690}
   m_Layer: 5
-  m_Name: SelectionButton5
+  m_Name: SelectionButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,7 +616,7 @@ GameObject:
   - component: {fileID: 1724293051}
   - component: {fileID: 1724293050}
   m_Layer: 5
-  m_Name: SelectionButton2
+  m_Name: SelectionButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +691,7 @@ GameObject:
   - component: {fileID: 1852121624}
   - component: {fileID: 1852121623}
   m_Layer: 5
-  m_Name: SelectionButton1
+  m_Name: SelectionButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,7 +766,7 @@ GameObject:
   - component: {fileID: 1858272642}
   - component: {fileID: 1858272641}
   m_Layer: 5
-  m_Name: SelectionButton3
+  m_Name: SelectionButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +841,7 @@ GameObject:
   - component: {fileID: 1866308856}
   - component: {fileID: 1866308855}
   m_Layer: 5
-  m_Name: SelectionButton1
+  m_Name: SelectionButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,7 +916,7 @@ GameObject:
   - component: {fileID: 2095471957}
   - component: {fileID: 2095471956}
   m_Layer: 5
-  m_Name: SelectionButton
+  m_Name: SelectionButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,7 +1487,7 @@ GameObject:
   - component: {fileID: 5245681650236607590}
   - component: {fileID: 5245681650236607591}
   m_Layer: 5
-  m_Name: SelectionButton2
+  m_Name: SelectionButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1558,7 +1562,7 @@ GameObject:
   - component: {fileID: 5245681651009532775}
   - component: {fileID: 5245681651009532792}
   m_Layer: 5
-  m_Name: SelectionButton
+  m_Name: SelectionButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1633,7 +1637,7 @@ GameObject:
   - component: {fileID: 5245681651035531265}
   - component: {fileID: 5245681651035531266}
   m_Layer: 5
-  m_Name: SelectionButton3
+  m_Name: SelectionButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1708,7 +1712,7 @@ GameObject:
   - component: {fileID: 5245681651257193618}
   - component: {fileID: 5245681651257193619}
   m_Layer: 5
-  m_Name: SelectionButton5
+  m_Name: SelectionButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,7 +1788,7 @@ GameObject:
   - component: {fileID: 638775956}
   m_Layer: 5
   m_Name: SelectionManager
-  m_TagString: Untagged
+  m_TagString: Kris
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1832,13 +1836,15 @@ MonoBehaviour:
   selected: {r: 0.9803922, g: 0.6313726, b: 0.10588236, a: 1}
   direction: 0
   buttons:
+  - {fileID: 5245681651257193621}
   - {fileID: 5245681651009532795}
   - {fileID: 5245681652232535769}
   - {fileID: 5245681650236607610}
   - {fileID: 5245681651035531268}
-  - {fileID: 5245681651257193621}
   currentSprite: {fileID: 5245681651009532792}
   selectionAnim: {fileID: 1953343605}
+  enemyMenu: {fileID: 0}
+  actMenu: {fileID: 0}
 --- !u!222 &638775956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1992,7 +1998,7 @@ GameObject:
   - component: {fileID: 5245681652232535749}
   - component: {fileID: 5245681652232535750}
   m_Layer: 5
-  m_Name: SelectionButton1
+  m_Name: SelectionButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

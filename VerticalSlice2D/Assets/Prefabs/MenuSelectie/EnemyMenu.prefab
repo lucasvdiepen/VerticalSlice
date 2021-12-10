@@ -337,7 +337,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &1854458122514109853
 MonoBehaviour:
@@ -395,7 +395,9 @@ MonoBehaviour:
   - {fileID: 1854458122344186785}
   - {fileID: 1854458121785577940}
   menuHolder: {fileID: 1854458123078328432}
-  enemies: []
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1854458122566754465
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1854458123078328433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -924,11 +926,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5384513887115058887, guid: 6aaecf1c8114f7043b03809792b12fa0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384513887115058887, guid: 6aaecf1c8114f7043b03809792b12fa0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384513887167677339, guid: 6aaecf1c8114f7043b03809792b12fa0, type: 3}
       propertyPath: m_Name
@@ -1050,11 +1052,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5384513887115058887, guid: 6aaecf1c8114f7043b03809792b12fa0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384513887115058887, guid: 6aaecf1c8114f7043b03809792b12fa0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5384513887167677339, guid: 6aaecf1c8114f7043b03809792b12fa0, type: 3}
       propertyPath: m_Name
