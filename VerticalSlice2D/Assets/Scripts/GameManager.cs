@@ -32,10 +32,15 @@ public class GameManager : MonoBehaviour
 
         currentActionIndex++;
 
-        if(currentActionIndex >= actions.Count)
+        if(currentActionIndex >= actions.Count + 1)
         {
             ActionsDone();
             return;
+        }
+
+        if (currentActionIndex >= actions.Count)
+        {
+            StartHeartMinigame();
         }
 
         ActionSaveManager.Action action = actions[currentActionIndex];
@@ -48,7 +53,6 @@ public class GameManager : MonoBehaviour
                 break;
             case ActionSaveManager.ActionType.Defend:
                 //For testing heart minigame
-                StartHeartMinigame();
                 break;
         }
     }
@@ -86,5 +90,7 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<BallAttack>().StopAttack();
 
         heartMinigameHolder.SetActive(false);
+
+        DoNextAction();
     }
 }

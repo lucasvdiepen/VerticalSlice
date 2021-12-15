@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombatUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4668514584741916476, guid: c4c041de1f0f47546ba9db191dacbadd, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 36611824}
     - target: {fileID: 4668514584741916477, guid: c4c041de1f0f47546ba9db191dacbadd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -664,6 +668,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
