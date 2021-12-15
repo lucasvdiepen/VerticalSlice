@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
                 break;
             case ActionSaveManager.ActionType.Spare:
                 //if mercy is 100% then kill enemy
-                GameObject enemy = actions[currentActionIndex].enemyObject;
+                GameObject enemy = action.enemyObject;
                 if (enemy.GetComponent<Mercy>().GetCurrentMercy() >= 100)
                 {
                     enemy.GetComponent<Health>().Spare();
@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour
                 break;
             case ActionSaveManager.ActionType.Defend:
                 //Set higher defense here
+                // +16 tp and 50% damage reduction
+                GameObject.FindGameObjectWithTag(action.playerName).GetComponent<Health>().SetDamageReduction(50);
                 DoNextAction();
                 break;
         }
@@ -83,6 +85,12 @@ public class GameManager : MonoBehaviour
 
     private void ActionsDone()
     {
+        //Remove all damage reductions
+        foreach(Health playerHealth in FindObjectsOfType<Health>())
+        {
+            playerHealth.ResetDamageReduction();
+        }
+
         FindObjectOfType<ActionSaveManager>().ResetActions();
         currentActionIndex = -1;
 

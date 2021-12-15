@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SelectionLogic : MonoBehaviour
 {
-    [HideInInspector] public string character;
+    public string character;
     private bool canSelect;
     private AudioManager audioManager;
     [SerializeField] private Color unselected, selected;
@@ -18,7 +18,6 @@ public class SelectionLogic : MonoBehaviour
 
     private void Awake() 
     {
-        character = gameObject.tag;
         audioManager = FindObjectOfType<AudioManager>();
     }
 

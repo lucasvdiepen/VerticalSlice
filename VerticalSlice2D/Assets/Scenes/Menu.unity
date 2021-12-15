@@ -325,30 +325,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 71033219, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 71033221, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: actMenu
       value: 
       objectReference: {fileID: 2057324228}
     - target: {fileID: 71033221, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: character
+      value: Susie
+      objectReference: {fileID: 0}
+    - target: {fileID: 71033221, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: enemyMenu
       value: 
       objectReference: {fileID: 1982282261}
+    - target: {fileID: 710650986, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 710650988, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: actMenu
       value: 
       objectReference: {fileID: 2057324228}
     - target: {fileID: 710650988, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: character
+      value: Ralsei
+      objectReference: {fileID: 0}
+    - target: {fileID: 710650988, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: enemyMenu
       value: 
       objectReference: {fileID: 1982282261}
+    - target: {fileID: 2239103020251707520, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: m_TagString
+      value: Kris
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825236511754683286, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: m_TagString
+      value: Susie
+      objectReference: {fileID: 0}
     - target: {fileID: 5245681651494636578, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: actMenu
       value: 
       objectReference: {fileID: 2057324228}
     - target: {fileID: 5245681651494636578, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: character
+      value: Kris
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245681651494636578, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: enemyMenu
       value: 
       objectReference: {fileID: 1982282261}
+    - target: {fileID: 5245681651494636580, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5245681651605922336, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -441,6 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectieUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7768931625144307497, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: m_TagString
+      value: Ralsei
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
 --- !u!1 &293899002
@@ -488,7 +524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curHealth: 0
-  maxHealth: 100
+  maxHealth: 1000
+  damageReduction: 0
 --- !u!114 &293899005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +563,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1116044827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2239103020251707520, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+  m_PrefabInstance: {fileID: 230281817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1116044828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116044827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c45c5a0d7573d4ba348759a409cd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  maxHealth: 100
+  damageReduction: 0
+--- !u!1 &1249489381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4825236511754683286, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+  m_PrefabInstance: {fileID: 230281817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1249489382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249489381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c45c5a0d7573d4ba348759a409cd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  maxHealth: 100
+  damageReduction: 0
 --- !u!1001 &1528390530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,7 +740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curHealth: 0
-  maxHealth: 100
+  maxHealth: 1000
+  damageReduction: 0
 --- !u!114 &1675987600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,6 +1013,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd527324e342884b980a63927414fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2134860834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7768931625144307497, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+  m_PrefabInstance: {fileID: 230281817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2134860835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134860834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c45c5a0d7573d4ba348759a409cd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  maxHealth: 100
+  damageReduction: 0
 --- !u!1001 &3075253577502443338
 PrefabInstance:
   m_ObjectHideFlags: 0
