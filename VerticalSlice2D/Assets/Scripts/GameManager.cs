@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
             case ActionSaveManager.ActionType.Defend:
                 //Set higher defense here
                 // +16 tp and 50% damage reduction
+                FindObjectOfType<TPBar>().AddTp(16);
                 GameObject.FindGameObjectWithTag(action.playerName).GetComponent<Health>().SetDamageReduction(50);
                 DoNextAction();
                 break;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SelectionLogic : MonoBehaviour
@@ -87,9 +88,20 @@ public class SelectionLogic : MonoBehaviour
             case 4:
                 //Defend
                 FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Defend);
-                FindObjectOfType<PlayerSelector>().NextPlayer();
+
+                StartCoroutine(delayedAction(() => {
+                    FindObjectOfType<PlayerSelector>().NextPlayer();
+                }));
+
                 break;
         }
+    }
+
+    private IEnumerator delayedAction(UnityAction action)
+    {
+        yield return null;
+        yield return new WaitForEndOfFrame();
+        action.Invoke();
     }
 
     private void UpdateDirection() 
