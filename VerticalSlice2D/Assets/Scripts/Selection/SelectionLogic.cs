@@ -81,6 +81,9 @@ public class SelectionLogic : MonoBehaviour
                 break;
             case 3:
                 //Spare
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Spare);
+                canSelect = false;
+                enemyMenu.OpenMenu();
                 break;
             case 4:
                 //Defend

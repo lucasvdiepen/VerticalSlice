@@ -21,4 +21,9 @@ public class EnemyMenu : Menu
 
         CloseMenu();
     }
+
+    public GameObject[] GetAllEnemies()
+    {
+        return enemies;
+    }
 }

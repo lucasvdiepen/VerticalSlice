@@ -32,15 +32,16 @@ public class GameManager : MonoBehaviour
 
         currentActionIndex++;
 
-        if(currentActionIndex >= actions.Count + 1)
+        if(currentActionIndex == actions.Count + 1)
         {
             ActionsDone();
             return;
         }
 
-        if (currentActionIndex >= actions.Count)
+        if (currentActionIndex == actions.Count)
         {
             StartHeartMinigame();
+            return;
         }
 
         ActionSaveManager.Action action = actions[currentActionIndex];
@@ -51,8 +52,26 @@ public class GameManager : MonoBehaviour
                 //Start fight script
                 StartCoroutine(FindObjectOfType<CombatLogic>().StartCombat());
                 break;
+            case ActionSaveManager.ActionType.SoftVoice:
+                //Set all enemy mergy 100%
+                foreach (GameObject currentEnemy in FindObjectOfType<EnemyMenu>().GetAllEnemies())
+                {
+                    currentEnemy.GetComponent<Mercy>().AddMercy(100);
+                }
+                DoNextAction();
+                break;
+            case ActionSaveManager.ActionType.Spare:
+                //if mercy is 100% then kill enemy
+                GameObject enemy = actions[currentActionIndex].enemyObject;
+                if (enemy.GetComponent<Mercy>().GetCurrentMercy() >= 100)
+                {
+                    enemy.GetComponent<Health>().Spare();
+                }
+                DoNextAction();
+                break;
             case ActionSaveManager.ActionType.Defend:
-                //For testing heart minigame
+                //Set higher defense here
+                DoNextAction();
                 break;
         }
     }
@@ -66,11 +85,18 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<ActionSaveManager>().ResetActions();
         currentActionIndex = -1;
+
+        FindObjectOfType<PlayerSelector>().NextPlayer();
     }
 
     public void ActionDone()
     {
         DoNextAction();
+    }
+
+    private void Spare()
+    {
+
     }
 
     private void StartHeartMinigame()

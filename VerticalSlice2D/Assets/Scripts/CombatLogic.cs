@@ -98,12 +98,12 @@ public class CombatLogic : MonoBehaviour
         GameObject enemy = FindObjectOfType<GameManager>().GetCurrentEnemy();
         enemy.GetComponent<Health>().TakeDamage(damageToDeal);
 
-        FindObjectOfType<GameManager>().DoNextAction();
-
         normalHits = 0;
         criticalHits = 0;
 
         combatUIHolder.SetActive(false);
+        
+        FindObjectOfType<GameManager>().DoNextAction();
     }
 
     //returns the nearest slider to refresh the update order

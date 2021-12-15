@@ -25,10 +25,23 @@ public class Mercy : MonoBehaviour
             UpdateText();
         }
     }
+
     private void MercyBarFill()
     {
         UpdateText();
         slider.value = (float)curMercy / (float)maxMercy;
+    }
+
+    public void AddMercy(float amount)
+    {
+        slider.value = slider.value + amount;
+        slider.value = Mathf.Clamp(slider.value, 0, maxMercy);
+        UpdateText();
+    }
+
+    public float GetCurrentMercy()
+    {
+        return slider.value;
     }
 
     private void UpdateText()
