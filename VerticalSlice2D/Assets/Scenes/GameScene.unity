@@ -557,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectieUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7693733997342427099, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -263
+      objectReference: {fileID: 0}
     - target: {fileID: 7768931625144307497, guid: d5e60e6b17aecb246acb775fd50a9a3e, type: 3}
       propertyPath: m_TagString
       value: Ralsei
@@ -1191,7 +1195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -77, y: -4.558588}
+  m_AnchoredPosition: {x: -77.000015, y: -4.558586}
   m_SizeDelta: {x: -246.21, y: -65.34282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896036498
@@ -2428,7 +2432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -74, y: -9}
+  m_AnchoredPosition: {x: -74.000015, y: -9}
   m_SizeDelta: {x: -231.35, y: -65.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064296553
@@ -2562,7 +2566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.9000244, y: -11.6075}
+  m_AnchoredPosition: {x: -0.9000244, y: -11.607498}
   m_SizeDelta: {x: -373.5, y: -91.705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098374326
