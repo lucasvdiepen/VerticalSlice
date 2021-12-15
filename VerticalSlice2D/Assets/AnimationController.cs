@@ -11,11 +11,12 @@ public class AnimationController : MonoBehaviour
         characterAnim.SetTrigger("idle");
     }
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
             PlayAnimation();
         }
     }
-    public void PlayAnimation(string animation = "attack") 
+    public void PlayAnimation(string animation = "victory") 
     {
         characterAnim.SetTrigger(animation);
     }
