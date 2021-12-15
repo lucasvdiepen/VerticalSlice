@@ -5,8 +5,26 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject heartMinigameHolder;
+    [SerializeField] private float heartMinigameDuration = 5f;
 
     private int currentActionIndex = -1;
+    private float lastHeartMinigameTime = 0;
+
+    private void Update()
+    {
+        HeartMinigameTimer();
+    }
+
+    private void HeartMinigameTimer()
+    {
+        if (heartMinigameHolder.activeSelf)
+        {
+            if (Time.time >= lastHeartMinigameTime + heartMinigameDuration)
+            {
+                StopHeartMinigame();
+            }
+        }
+    }
 
     public void DoNextAction()
     {
@@ -53,17 +71,19 @@ public class GameManager : MonoBehaviour
 
     private void StartHeartMinigame()
     {
+        lastHeartMinigameTime = Time.time;
+
         heartMinigameHolder.SetActive(true);
         FindObjectOfType<HeartMovement>().ResetPosition();
 
         //Start enemy attacks
+        FindObjectOfType<BallAttack>().StartAttack();
     }
 
     private void StopHeartMinigame()
     {
         //Stop enemy attack
-
-        //Remove all enemy bullets
+        FindObjectOfType<BallAttack>().StopAttack();
 
         heartMinigameHolder.SetActive(false);
     }
