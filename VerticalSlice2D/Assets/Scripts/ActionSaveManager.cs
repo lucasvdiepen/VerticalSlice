@@ -51,16 +51,16 @@ public class ActionSaveManager : MonoBehaviour
         currentPlayerName = playerName;
 
         actions.Add(new Action(playerName, actionType));
-
-        if(actionType == ActionType.SoftVoice)
-        {
-            actions.Add(new Action("Ralsei", ActionType.Nothing));
-        }
     }
 
     public void ChangeCurrentPlayerAction(ActionType actionType)
     {
-        for(int i = 0; i < actions.Count; i++)
+        if (actionType == ActionType.SoftVoice)
+        {
+            actions.Add(new Action("Ralsei", ActionType.Nothing));
+        }
+
+        for (int i = 0; i < actions.Count; i++)
         {
             if(actions[i].playerName == currentPlayerName)
             {

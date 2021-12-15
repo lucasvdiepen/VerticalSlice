@@ -76,6 +76,9 @@ public class GameManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(action.playerName).GetComponent<Health>().SetDamageReduction(50);
                 DoNextAction();
                 break;
+            default:
+                DoNextAction();
+                break;
         }
     }
 

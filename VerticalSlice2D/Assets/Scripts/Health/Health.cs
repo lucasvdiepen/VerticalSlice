@@ -16,10 +16,10 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(10);
-        }
+        }*/
     }
 
     public void TakeDamage(int damage)

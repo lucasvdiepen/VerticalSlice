@@ -7,6 +7,7 @@ public class PlayerSelector : MonoBehaviour
     [SerializeField] private GameObject[] players;
 
     private int currentPlayer = -1;
+    private bool skippedPlayer = false;
 
     private void Start()
     {
@@ -24,7 +25,14 @@ public class PlayerSelector : MonoBehaviour
 
     public void NextPlayer()
     {
-        if(currentPlayer >= 0) players[currentPlayer].GetComponent<SelectionLogic>().CloseMenu();
+        if(skippedPlayer)
+        {
+            skippedPlayer = false;
+        }
+        else
+        {
+            if(currentPlayer >= 0) players[currentPlayer].GetComponent<SelectionLogic>().CloseMenu();
+        }
 
         currentPlayer++;
 
@@ -38,6 +46,7 @@ public class PlayerSelector : MonoBehaviour
 
         if (HasPlayerDoneAction(currentPlayerSelectionLogic.character))
         {
+            skippedPlayer = true;
             NextPlayer();
             return;
         }
