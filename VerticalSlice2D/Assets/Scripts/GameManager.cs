@@ -118,6 +118,8 @@ public class GameManager : MonoBehaviour
         heartMinigameHolder.SetActive(true);
         FindObjectOfType<HeartMovement>().ResetPosition();
 
+        FindObjectOfType<HeartCollisions>().SetRandomTarget();
+
         //Start enemy attacks
         FindObjectOfType<BallAttack>().StartAttack();
     }
