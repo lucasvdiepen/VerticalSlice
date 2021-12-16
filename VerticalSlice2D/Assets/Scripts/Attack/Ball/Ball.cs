@@ -24,6 +24,8 @@ public class Ball : MonoBehaviour
         timeToReachTarget = timeToFinish;
         projectileStarted = true;
         startPosition = transform.position;
+
+        Destroy(gameObject, 5f);
     }
 
     private void Update()
