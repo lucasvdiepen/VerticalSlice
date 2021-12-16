@@ -10,7 +10,7 @@ public class GameOverMenu : Menu
         switch (selectedButton)
         {
             case 0:
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("GameScene");
                 break;
             case 2:
                 Application.Quit();
