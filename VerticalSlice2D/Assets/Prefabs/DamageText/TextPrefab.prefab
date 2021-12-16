@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6524075558021713377}
   - component: {fileID: 590415284762069687}
   - component: {fileID: 8865995393455791165}
+  - component: {fileID: -5539675412627502156}
   m_Layer: 5
   m_Name: TextPrefab
   m_TagString: Untagged
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -167,3 +168,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &-5539675412627502156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761970446767447153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76cecebd5c1edac4596136d3d898b40b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
