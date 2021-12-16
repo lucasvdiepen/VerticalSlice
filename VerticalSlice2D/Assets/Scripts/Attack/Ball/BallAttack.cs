@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallAttack : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private Transform target;
 
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject ball;
@@ -16,6 +16,13 @@ public class BallAttack : MonoBehaviour
 
     private bool isAttacking = false;
     private float lastSpawnTime = 0;
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Heart").transform;
+
+        StartAttack();
+    }
 
     public void StartAttack()
     {

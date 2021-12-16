@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int curHealth = 0;
+    [HideInInspector] public int curHealth = 0;
     public int maxHealth = 100;
 
     private void Start()
