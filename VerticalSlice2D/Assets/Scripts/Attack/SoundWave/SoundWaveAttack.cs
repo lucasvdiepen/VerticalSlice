@@ -63,6 +63,10 @@ public class SoundWaveAttack : MonoBehaviour
             {
                 if(Time.time >= lastSpawnTime + spawnDelay)
                 {
+                    if(soundWaveCount == 0) 
+                    {
+                        FindObjectOfType<AudioManager>().Play("SoundWaveAttack");
+                    }
                     SpawnBullet();
                     soundWaveCount += 1;
                     lastSpawnTime = Time.time;

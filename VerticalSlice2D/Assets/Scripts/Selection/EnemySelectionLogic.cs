@@ -59,7 +59,7 @@ public class EnemySelectionLogic : MonoBehaviour
     }
     private void UpdateDirection() 
     {
-        //audioManager.Play("Blip");
+        audioManager.Play("Blip");
         currentSprite = buttons[direction].GetComponent<Image>();
         SetSelectedButton();
     }

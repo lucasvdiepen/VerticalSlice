@@ -41,6 +41,7 @@ public class CombatLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace) && !isInCombat) 
         {
             StartCoroutine(StartCombat());
+            FindObjectOfType<AudioManager>().Play("Slash");
         }
 
         //hit slider

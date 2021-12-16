@@ -27,11 +27,13 @@ public class CombatSlider : MonoBehaviour
             if (hitNow) 
             {
                 Debug.Log("<color=red>CRITICAL HIT</color>");
+                FindObjectOfType<AudioManager>().Play("CriticalHit");
                 SliderHit(true);
             }
             else if (combatLogic.isInCombat && !hitNow) 
             {
                 print("Normal hit");
+                FindObjectOfType<AudioManager>().Play("CriticalHit");
                 SliderHit(false);
             }
         }
