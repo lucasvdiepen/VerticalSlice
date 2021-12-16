@@ -32,6 +32,13 @@ public class SoundWaveSpawner : MonoBehaviour
     public void StopAttack()
     {
         isAttacking = false;
+
+        GameObject[] allSoundWaves = GameObject.FindGameObjectsWithTag("SoundWaveBullet");
+
+        for (int i = 0; i < allSoundWaves.Length; i++)
+        {
+            Destroy(allSoundWaves[i]);
+        }
     }
 
     private void Update()
