@@ -7,6 +7,7 @@ public class PlayerSelector : MonoBehaviour
     [SerializeField] private GameObject[] players;
 
     private int currentPlayer = -1;
+    private bool skippedPlayer = false;
 
     private void Start()
     {
@@ -18,13 +19,20 @@ public class PlayerSelector : MonoBehaviour
         //for testing
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            NextPlayer();
+            //NextPlayer();
         }
     }
 
     public void NextPlayer()
     {
-        if(currentPlayer >= 0) players[currentPlayer].GetComponent<SelectionLogic>().CloseMenu();
+        if(skippedPlayer)
+        {
+            skippedPlayer = false;
+        }
+        else
+        {
+            if(currentPlayer >= 0) players[currentPlayer].GetComponent<SelectionLogic>().CloseMenu();
+        }
 
         currentPlayer++;
 
@@ -38,18 +46,13 @@ public class PlayerSelector : MonoBehaviour
 
         if (HasPlayerDoneAction(currentPlayerSelectionLogic.character))
         {
+            skippedPlayer = true;
             NextPlayer();
             return;
         }
-        
 
         //Open menu
         players[currentPlayer].GetComponent<SelectionLogic>().OpenMenu();
-    }
-
-    public void ButtonPressed(ActionSaveManager.Action actionType)
-    {
-
     }
 
     public void PlayersDone()
@@ -57,6 +60,7 @@ public class PlayerSelector : MonoBehaviour
         currentPlayer = -1;
 
         //Game manager can now process all actions
+        FindObjectOfType<GameManager>().DoNextAction();
     }
 
     private bool HasPlayerDoneAction(string player)

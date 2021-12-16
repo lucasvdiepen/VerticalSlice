@@ -7,6 +7,7 @@ public class ActionSaveManager : MonoBehaviour
     public enum ActionType
     {
         Fight,
+        Act,
         Roar,
         SoftVoice,
         Spare,
@@ -17,7 +18,7 @@ public class ActionSaveManager : MonoBehaviour
     public class Action
     {
         public string playerName;
-        public GameObject enemyId;
+        public GameObject enemyObject;
         public ActionType actionType;
 
         public Action(string playerName, ActionType actionType)
@@ -28,7 +29,7 @@ public class ActionSaveManager : MonoBehaviour
 
         public void AddEnemyTarget(GameObject enemyId)
         {
-            this.enemyId = enemyId;
+            this.enemyObject = enemyId;
         }
     }
 
@@ -50,10 +51,22 @@ public class ActionSaveManager : MonoBehaviour
         currentPlayerName = playerName;
 
         actions.Add(new Action(playerName, actionType));
+    }
 
-        if(actionType == ActionType.SoftVoice)
+    public void ChangeCurrentPlayerAction(ActionType actionType)
+    {
+        if (actionType == ActionType.SoftVoice)
         {
             actions.Add(new Action("Ralsei", ActionType.Nothing));
+        }
+
+        for (int i = 0; i < actions.Count; i++)
+        {
+            if(actions[i].playerName == currentPlayerName)
+            {
+                actions[i].actionType = actionType;
+                return;
+            }
         }
     }
 
@@ -61,8 +74,26 @@ public class ActionSaveManager : MonoBehaviour
     {
         for(int i = 0; i < actions.Count; i++)
         {
-            if (actions[i].playerName == currentPlayerName) actions[i].AddEnemyTarget(enemyId);
-            break;
+            if (actions[i].playerName == currentPlayerName)
+            {
+                actions[i].AddEnemyTarget(enemyId);
+                break;
+            }
         }
+    }
+
+    public ActionType? GetCurrentAction()
+    {
+        for (int i = 0; i < actions.Count; i++)
+        {
+            if (actions[i].playerName == currentPlayerName) return actions[i].actionType;
+        }
+
+        return null;
+    }
+
+    public List<Action> GetActions()
+    {
+        return actions;
     }
 }

@@ -77,11 +77,13 @@ public class EnemySelectionLogic : MonoBehaviour
         {
             //first enemy
             selectedEnemy = enemies[1];
+            FindObjectOfType<ActionSaveManager>().AddEnemyTarget(enemies[1]);
         }
         else if(currentSprite == buttons[0].GetComponent<Image>())
         {
             //seceond enemy
             selectedEnemy = enemies[0];
+            FindObjectOfType<ActionSaveManager>().AddEnemyTarget(enemies[0]);
         }
         CloseMenu();
     }

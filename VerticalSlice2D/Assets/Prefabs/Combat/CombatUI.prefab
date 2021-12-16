@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 4668514584741916476}
   - component: {fileID: 4668514584741916479}
   - component: {fileID: 4668514584741916478}
+  - component: {fileID: 1187245186}
   m_Layer: 5
   m_Name: CombatUI
   m_TagString: Untagged
@@ -564,6 +565,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1187245186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668514584741916417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729ec4ccbb3765c4e8357298e6fa7496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatUIHolder: {fileID: 4668514585885549258}
+  isInCombat: 0
+  sliders:
+  - {fileID: 2396562913369685808}
+  - {fileID: 2396562913692563037}
+  - {fileID: 2396562913022832314}
+  spawnPositions:
+  - {fileID: 4668514585787857766}
+  - {fileID: 4668514584284567629}
+  - {fileID: 4668514585306714876}
+  moveSpeed: 4
 --- !u!1 &4668514584838310705
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +815,6 @@ GameObject:
   - component: {fileID: 4668514585437007678}
   - component: {fileID: 4668514585437007676}
   - component: {fileID: 4668514585437007679}
-  - component: {fileID: 4668514585437007677}
   m_Layer: 5
   m_Name: CombatBox
   m_TagString: Untagged
@@ -860,28 +883,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4668514585437007677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4668514585437007617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729ec4ccbb3765c4e8357298e6fa7496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInCombat: 0
-  sliders:
-  - {fileID: 2396562913369685808}
-  - {fileID: 2396562913692563037}
-  - {fileID: 2396562913022832314}
-  spawnPositions:
-  - {fileID: 4668514585787857766}
-  - {fileID: 4668514584284567629}
-  - {fileID: 4668514585306714876}
-  moveSpeed: 4
 --- !u!1 &4668514585524150486
 GameObject:
   m_ObjectHideFlags: 0

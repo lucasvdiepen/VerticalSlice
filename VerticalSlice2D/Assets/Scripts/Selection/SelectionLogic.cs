@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SelectionLogic : MonoBehaviour
 {
-    [HideInInspector] public string character;
+    public string character;
     private bool canSelect;
     private AudioManager audioManager;
     [SerializeField] private Color unselected, selected;
-    [SerializeField] private int direction;
+    [SerializeField] private int direction = 0;
     [SerializeField] private List<GameObject> buttons = new List<GameObject>();
     [SerializeField] private Image currentSprite;
     [SerializeField] private Animator selectionAnim;
+    [SerializeField] private Menu enemyMenu;
+    [SerializeField] private Menu actMenu;
 
     private void Awake() 
     {
-        character = gameObject.tag;
         audioManager = FindObjectOfType<AudioManager>();
     }
 
@@ -50,8 +52,58 @@ public class SelectionLogic : MonoBehaviour
                 }
                 UpdateDirection();
             }
+
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                ExecuteButton();
+            }
         }
     }
+
+    private void ExecuteButton()
+    {
+        switch(direction)
+        {
+            case 0:
+                //Fight
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Fight);
+                canSelect = false;
+                enemyMenu.OpenMenu();
+                break;
+            case 1:
+                //Act
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Act);
+                canSelect = false;
+                enemyMenu.OpenMenu();
+                break;
+            case 2:
+                //Items
+                break;
+            case 3:
+                //Spare
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Spare);
+                canSelect = false;
+                enemyMenu.OpenMenu();
+                break;
+            case 4:
+                //Defend
+                FindObjectOfType<ActionSaveManager>().AddAction(character, ActionSaveManager.ActionType.Defend);
+
+                StartCoroutine(delayedAction(() => {
+                    FindObjectOfType<PlayerSelector>().NextPlayer();
+                }));
+
+                break;
+        }
+    }
+
+    private IEnumerator delayedAction(UnityAction action)
+    {
+        yield return null;
+        yield return new WaitForEndOfFrame();
+        action.Invoke();
+    }
+
     private void UpdateDirection() 
     {
         //audioManager.Play("Blip");
