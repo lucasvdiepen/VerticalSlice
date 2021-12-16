@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5336593138023925203}
   - component: {fileID: 5336593138023925204}
   - component: {fileID: 5336593138023925202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SoundWaveBullet2
   m_TagString: SoundWaveBullet
   m_Icon: {fileID: 0}

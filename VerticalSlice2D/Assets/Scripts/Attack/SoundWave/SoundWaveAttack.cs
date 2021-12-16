@@ -65,6 +65,7 @@ public class SoundWaveAttack : MonoBehaviour
                 {
                     if(soundWaveCount == 0) 
                     {
+                        GetComponent<Animator>().SetTrigger("attack");
                         FindObjectOfType<AudioManager>().Play("SoundWaveAttack");
                     }
                     SpawnBullet();

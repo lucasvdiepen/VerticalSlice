@@ -12,11 +12,11 @@ public class AnimationController : MonoBehaviour
         characterAnim.SetTrigger("idle");
     }
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        /*if (Input.GetKeyDown(KeyCode.Space)) 
         {
             PlayAnimation();
            
-        }
+        }*/
 
         if (isRunning) {
             transform.position += new Vector3(1, 0, 0);

@@ -103,6 +103,8 @@ public class CombatLogic : MonoBehaviour
         criticalHits = 0;
 
         combatUIHolder.SetActive(false);
+
+        FindObjectOfType<GameManager>().RunCombatAnimations();
         
         FindObjectOfType<GameManager>().DoNextAction();
     }

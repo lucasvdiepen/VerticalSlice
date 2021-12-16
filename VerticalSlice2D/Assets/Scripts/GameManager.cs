@@ -54,6 +54,9 @@ public class GameManager : MonoBehaviour
                 break;
             case ActionSaveManager.ActionType.SoftVoice:
                 //Set all enemy mergy 100%
+
+                GameObject.FindGameObjectWithTag("Ralsei").GetComponent<AnimationController>().PlayAnimation("attack");
+
                 foreach (GameObject currentEnemy in FindObjectOfType<EnemyMenu>().GetAllEnemies())
                 {
                     currentEnemy.GetComponent<Mercy>().AddMercy(100);
@@ -85,6 +88,19 @@ public class GameManager : MonoBehaviour
     public GameObject GetCurrentEnemy()
     {
         return FindObjectOfType<ActionSaveManager>().GetActions()[currentActionIndex].enemyObject;
+    }
+
+    public void RunCombatAnimations()
+    {
+        List<ActionSaveManager.Action> actions = FindObjectOfType<ActionSaveManager>().GetActions();
+
+        for (int i = 0; i < actions.Count; i++)
+        {
+            if(actions[i].actionType == ActionSaveManager.ActionType.Fight)
+            {
+                GameObject.FindGameObjectWithTag(actions[i].playerName).GetComponent<AnimationController>().PlayAnimation("attack");
+            }
+        }
     }
 
     private void ActionsDone()
