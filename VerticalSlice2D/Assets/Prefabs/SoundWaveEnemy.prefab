@@ -41,6 +41,8 @@ GameObject:
   - component: {fileID: 7203474754924160521}
   - component: {fileID: 7203474754924160522}
   - component: {fileID: 7203474754924160520}
+  - component: {fileID: 1194709604}
+  - component: {fileID: 1194709603}
   m_Layer: 0
   m_Name: SoundWaveEnemy
   m_TagString: Untagged
@@ -126,10 +128,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ce80a4471617b4eb821422e856e21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   spawnPoint: {fileID: 7203474754833494743}
   bullet: {fileID: 5336593138023925207, guid: 8aaf35e460b28a64e94c064055f159e0, type: 3}
   speed: 5
   spawnDelay: 0.06
   soundWaveDelay: 0.5
   soundWaves: 8
+--- !u!114 &1194709604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7203474754924160523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c45c5a0d7573d4ba348759a409cd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  maxHealth: 100
+  damageReduction: 0
+--- !u!114 &1194709603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7203474754924160523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98666df60790c1c4981c061113f9137c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mercyText: {fileID: 0}
+  slider: {fileID: 0}
+  maxMercy: 100

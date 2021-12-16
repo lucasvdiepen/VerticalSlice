@@ -15,7 +15,7 @@ public class HeartCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("Ball"))
+        if (collision.transform.CompareTag("Ball") || collision.transform.CompareTag("SoundWaveBullet"))
         {
             if(!heartInvisibility.IsInvisible())
             {

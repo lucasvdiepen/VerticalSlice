@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundWaveSpawner : MonoBehaviour
+public class SoundWaveAttack : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private Transform target;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject bullet;
     [SerializeField] private float speed = 5f;
@@ -18,13 +18,9 @@ public class SoundWaveSpawner : MonoBehaviour
     private int soundWaveCount = 0;
     private Vector2 currentTarget;
 
-    private void Start()
-    {
-        StartAttack();
-    }
-
     public void StartAttack()
     {
+        target = GameObject.FindGameObjectWithTag("Heart").transform;
         UpdateTarget();
         isAttacking = true;
     }

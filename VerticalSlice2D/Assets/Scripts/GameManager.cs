@@ -122,12 +122,14 @@ public class GameManager : MonoBehaviour
 
         //Start enemy attacks
         FindObjectOfType<BallAttack>().StartAttack();
+        FindObjectOfType<SoundWaveAttack>().StartAttack();
     }
 
     private void StopHeartMinigame()
     {
         //Stop enemy attack
         FindObjectOfType<BallAttack>().StopAttack();
+        FindObjectOfType<SoundWaveAttack>().StopAttack();
 
         heartMinigameHolder.SetActive(false);
 
