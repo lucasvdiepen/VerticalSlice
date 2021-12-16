@@ -18,7 +18,7 @@ public class SoundWave : MonoBehaviour
 
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        transform.rotation = Quaternion.Euler(0, 0, rotZ + 180);
 
         Destroy(gameObject, 5f);
     }

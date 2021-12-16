@@ -251,9 +251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1325266496}
   spawnPoint: {fileID: 295839552}
-  bullet: {fileID: 1506003862170939964, guid: a9beba7128747a24d9224dc3f28c4358, type: 3}
+  bullet: {fileID: 5336593138023925207, guid: 8aaf35e460b28a64e94c064055f159e0, type: 3}
   speed: 5
-  spawnDelay: 0.05
+  spawnDelay: 0.06
   soundWaveDelay: 3
   soundWaves: 8
 --- !u!1 &710507644
