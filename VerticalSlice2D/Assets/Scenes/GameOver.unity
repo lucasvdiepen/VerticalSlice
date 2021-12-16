@@ -627,50 +627,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1851402692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1851402694}
-  - component: {fileID: 1851402693}
-  m_Layer: 0
-  m_Name: GameOverHandeler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1851402693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851402692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ddae388d4ede241aa4eea3c99b16df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOver: {fileID: 0}
---- !u!4 &1851402694
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851402692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8460829, y: 0.13531497, z: -10.512209}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2025058649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -696,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8559932832508024872, guid: a4fcbd3c7a810c14cb19fefa3773fd47, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1.7495503
+      value: -1.4595504
       objectReference: {fileID: 0}
     - target: {fileID: 8559932832508024872, guid: a4fcbd3c7a810c14cb19fefa3773fd47, type: 3}
       propertyPath: m_SizeDelta.y
@@ -704,7 +660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8559932832508024872, guid: a4fcbd3c7a810c14cb19fefa3773fd47, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.245225
+      value: 5.100225
       objectReference: {fileID: 0}
     - target: {fileID: 8559932832508024872, guid: a4fcbd3c7a810c14cb19fefa3773fd47, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -804,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8559932833198656801, guid: a4fcbd3c7a810c14cb19fefa3773fd47, type: 3}
       propertyPath: pauseSpeed
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8559932833198656801, guid: a4fcbd3c7a810c14cb19fefa3773fd47, type: 3}
       propertyPath: dialogueObj
