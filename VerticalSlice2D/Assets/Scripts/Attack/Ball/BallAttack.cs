@@ -19,19 +19,27 @@ public class BallAttack : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Heart").transform;
-
-        StartAttack();
+        //StartAttack();
     }
 
     public void StartAttack()
     {
+        target = GameObject.FindGameObjectWithTag("Heart").transform;
+
         isAttacking = true;
     }
 
     public void StopAttack()
     {
         isAttacking = false;
+
+        //Remove all bullets
+        GameObject[] allBalls = GameObject.FindGameObjectsWithTag("Ball");
+
+        for (int i = 0; i < allBalls.Length; i++)
+        {
+            Destroy(allBalls[i]);
+        }
     }
 
     private void Update()

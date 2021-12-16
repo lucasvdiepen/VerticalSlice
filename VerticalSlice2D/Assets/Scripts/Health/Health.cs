@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [HideInInspector] public int curHealth = 0;
     public int maxHealth = 100;
+    [HideInInspector] public float damageReduction;
 
     private void Start()
     {
@@ -14,15 +16,19 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(10);
-        }
+        }*/
     }
 
     public void TakeDamage(int damage)
     {
-        curHealth -= damage;
+        float reduction = 100 - damageReduction;
+
+        float damageToDeal = damage * reduction * 0.01f;
+
+        curHealth -= Convert.ToInt32(damageToDeal);
 
         HandleTakeDamage();
 
@@ -32,6 +38,21 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void SetDamageReduction(float amount)
+    {
+        damageReduction = amount;
+    }
+
+    public void ResetDamageReduction()
+    {
+        damageReduction = 0;
+    }
+
+    public void Spare()
+    {
+        HandleDeath();
+    }
+
     protected virtual void HandleTakeDamage()
     {
         
@@ -39,6 +60,6 @@ public class Health : MonoBehaviour
 
     protected virtual void HandleDeath()
     {
-        
+        Debug.Log("Handle death called");
     }
 }

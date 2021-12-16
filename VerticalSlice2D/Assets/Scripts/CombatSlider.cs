@@ -67,6 +67,9 @@ public class CombatSlider : MonoBehaviour
             //Critical Hit! spawns a blinking slider 
             blinker.GetComponent<Image>().color = Color.yellow;
         }
+
+        combatLogic.RegisterHit(criticalHit);
+
         //normal hit, no color change needed
         KillSlider();
     }

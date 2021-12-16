@@ -5,16 +5,21 @@ using UnityEngine;
 
 public class CombatLogic : MonoBehaviour
 {
+    [SerializeField] private GameObject combatUIHolder;
     private Vector2 movement;
     private int deadSliderCount;
     [HideInInspector] public bool isInCombat = false;
     [SerializeField] private GameObject[] sliders;
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private float moveSpeed;
+    private int normalHits = 0;
+    private int criticalHits = 0;
+
     public IEnumerator StartCombat() 
     {
         //randomizing the position 
         isInCombat = true;
+        combatUIHolder.SetActive(true);
         for (int i = 0; i < sliders.Length; i++) 
         {
             sliders[i].SetActive(true);
@@ -72,10 +77,35 @@ public class CombatLogic : MonoBehaviour
             for (int i = 0; i < sliders.Length; i++) 
             {
                 sliders[i].transform.position = spawnPositions[i].position;
-                deadSliderCount = 0;
             }
+
+            deadSliderCount = 0;
+
+            Invoke("CombatDone", 1f);
         }
     }
+
+    public void RegisterHit(bool critical)
+    {
+        if (critical) criticalHits++;
+        else normalHits++;
+    }
+
+    private void CombatDone()
+    {
+        int damageToDeal = (120 * criticalHits) + (72 * normalHits);
+
+        GameObject enemy = FindObjectOfType<GameManager>().GetCurrentEnemy();
+        enemy.GetComponent<Health>().TakeDamage(damageToDeal);
+
+        normalHits = 0;
+        criticalHits = 0;
+
+        combatUIHolder.SetActive(false);
+        
+        FindObjectOfType<GameManager>().DoNextAction();
+    }
+
     //returns the nearest slider to refresh the update order
     public GameObject GetNearestSlider() 
     {

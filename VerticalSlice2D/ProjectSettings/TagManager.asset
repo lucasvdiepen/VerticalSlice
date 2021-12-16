@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - SoundWaveBullet
   - Ball
   - Heart
+  - Kris
+  - Susie
+  - Ralsei
   layers:
   - Default
   - TransparentFX

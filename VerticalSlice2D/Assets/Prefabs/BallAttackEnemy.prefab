@@ -41,6 +41,8 @@ GameObject:
   - component: {fileID: 6814659737305621721}
   - component: {fileID: 6814659737305621722}
   - component: {fileID: 6814659737305621720}
+  - component: {fileID: 111656505}
+  - component: {fileID: 111656506}
   m_Layer: 0
   m_Name: BallAttackEnemy
   m_TagString: Untagged
@@ -131,3 +133,33 @@ MonoBehaviour:
   ballHeight: 5
   timeToTarget: 3
   spawnDelay: 0.5
+--- !u!114 &111656505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814659737305621723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98666df60790c1c4981c061113f9137c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mercyText: {fileID: 0}
+  slider: {fileID: 0}
+  maxMercy: 100
+--- !u!114 &111656506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814659737305621723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c45c5a0d7573d4ba348759a409cd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  maxHealth: 1000
+  damageReduction: 0

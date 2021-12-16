@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: test
   m_EditorClassIdentifier: 
   typeOfDialogue: 1
-  dialogueMessage: Test hahaha
+  dialogueMessage: Tasques crossed your path!
   soundEffect: {fileID: 8300000, guid: 9102667e1f6f0044b82ed93890f685f5, type: 3}
-  talkingHead: {fileID: 21300000, guid: dff28274000cd1043abc2c62afa77767, type: 3}
+  talkingHead: {fileID: 0}
