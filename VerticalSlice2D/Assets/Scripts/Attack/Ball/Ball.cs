@@ -24,6 +24,8 @@ public class Ball : MonoBehaviour
         timeToReachTarget = timeToFinish;
         projectileStarted = true;
         startPosition = transform.position;
+
+        Destroy(gameObject, 5f);
     }
 
     private void Update()
@@ -42,15 +44,19 @@ public class Ball : MonoBehaviour
             else
             {
                 Vector3 newPosition = Parabola(startPosition, target, height, timeElapsed / timeToReachTarget);
+
+                Vector3 newDiff = newPosition - transform.position;
+                float angle = Mathf.Atan2(newDiff.y, newDiff.x);
+                transform.rotation = Quaternion.Euler(0, 0, (angle * Mathf.Rad2Deg) + 135);
+
                 transform.position = newPosition;
 
-                Vector3 newDiff = newPosition - lastPosition;
                 if (newDiff != Vector3.zero)
                 {
                     diff = newDiff;
                 }
 
-                lastPosition = newPosition;
+                //lastPosition = newPosition;
                 timeElapsed += Time.deltaTime;
             }
         }
