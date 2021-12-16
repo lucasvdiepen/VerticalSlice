@@ -27,7 +27,7 @@ public class DialogueLogic : MonoBehaviour
             StartDialogue();
         }
     }
-    private void StartDialogue() 
+    public void StartDialogue() 
     {
         if(dialogueObj.typeOfDialogue == dialogueType.speechBubble) 
         {
