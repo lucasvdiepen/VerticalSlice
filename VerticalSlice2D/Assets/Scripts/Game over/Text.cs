@@ -14,5 +14,9 @@ public class Text : MonoBehaviour
         {
             FindObjectOfType<DialogueLogic>().StartDialogue();
         }
+        if (timeLeft <= -6.5f)
+        {
+            FindObjectOfType<GameOverMenu>().OpenMenu();
+        }
     }
 }
