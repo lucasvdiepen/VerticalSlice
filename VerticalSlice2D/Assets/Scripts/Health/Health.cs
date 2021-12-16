@@ -48,11 +48,6 @@ public class Health : MonoBehaviour
         damageReduction = 0;
     }
 
-    public void Spare()
-    {
-        HandleDeath();
-    }
-
     protected virtual void HandleTakeDamage()
     {
         

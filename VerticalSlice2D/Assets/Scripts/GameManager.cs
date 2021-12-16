@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
             case ActionSaveManager.ActionType.SoftVoice:
                 //Set all enemy mergy 100%
 
+
                 GameObject.FindGameObjectWithTag("Ralsei").GetComponent<AnimationController>().PlayAnimation("attack");
 
                 foreach (GameObject currentEnemy in FindObjectOfType<EnemyMenu>().GetAllEnemies())
@@ -65,10 +66,13 @@ public class GameManager : MonoBehaviour
                 break;
             case ActionSaveManager.ActionType.Spare:
                 //if mercy is 100% then kill enemy
+
+                GameObject.FindGameObjectWithTag(action.playerName).GetComponent<AnimationController>().PlayAnimation("act");
+
                 GameObject enemy = action.enemyObject;
                 if (enemy.GetComponent<Mercy>().GetCurrentMercy() >= 100)
                 {
-                    enemy.GetComponent<Health>().Spare();
+                    enemy.GetComponent<EnemyHealth>().Spare();
                 }
                 DoNextAction();
                 break;

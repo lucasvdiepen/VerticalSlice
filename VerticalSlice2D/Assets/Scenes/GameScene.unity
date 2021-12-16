@@ -1297,8 +1297,8 @@ GameObject:
   - component: {fileID: 1303403516}
   - component: {fileID: 1303403515}
   - component: {fileID: 1303403521}
-  - component: {fileID: 1303403520}
   - component: {fileID: 1303403519}
+  - component: {fileID: 1303403520}
   m_Layer: 5
   m_Name: Enemy2
   m_TagString: Untagged
@@ -1419,12 +1419,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1303403513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c45c5a0d7573d4ba348759a409cd1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 04891427d09a4df4dab5ad4f913ec279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   curHealth: 0
   maxHealth: 240
   damageReduction: 0
+  healthText: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!114 &1303403521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1665,12 +1667,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1578423284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c45c5a0d7573d4ba348759a409cd1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 04891427d09a4df4dab5ad4f913ec279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   curHealth: 0
   maxHealth: 240
   damageReduction: 0
+  healthText: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!114 &1578423291
 MonoBehaviour:
   m_ObjectHideFlags: 0
