@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: tasqueHit
+  m_Name: tasqueRawr
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 709574bd34a98e342a6f9c680a11e232, type: 2}
+  m_Motion: {fileID: 7400000, guid: 038dc16e0d7d5424284aaaf5c3068f23, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -185,7 +185,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: mercy
+    m_ConditionEvent: attack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8763372022351140573}
@@ -269,7 +269,7 @@ AnimatorStateMachine:
     m_Position: {x: -50, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8763372022351140573}
-    m_Position: {x: 170, y: -200, z: 0}
+    m_Position: {x: 210, y: -200, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 710538324113720321}
