@@ -6,6 +6,13 @@ public class AnimationController : MonoBehaviour
 {
     public bool isRunning;
     private Animator characterAnim;
+    private RectTransform rectTransform;
+
+    private void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
+
     private void Awake() 
     {
         characterAnim = gameObject.GetComponent<Animator>();
@@ -19,7 +26,7 @@ public class AnimationController : MonoBehaviour
         }*/
 
         if (isRunning) {
-            transform.position += new Vector3(1, 0, 0);
+            rectTransform.localPosition += new Vector3(1, 0, 0) * Time.deltaTime;
         }
     }
     public void PlayAnimation(string animation = "victory") 
