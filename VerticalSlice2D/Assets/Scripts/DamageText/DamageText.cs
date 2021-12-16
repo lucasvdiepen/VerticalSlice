@@ -36,6 +36,7 @@ public class DamageText : MonoBehaviour
         //susie 255, 0, 223, 255
         //kris 44, 198, 225, 255
         //ralsei 21, 255, 0, 255
+        character.ToLower();
         Color result = Color.white;
         switch (character) 
         {
