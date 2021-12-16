@@ -46,9 +46,7 @@ public class Ball : MonoBehaviour
                 Vector3 newPosition = Parabola(startPosition, target, height, timeElapsed / timeToReachTarget);
 
                 Vector3 newDiff = newPosition - transform.position;
-
                 float angle = Mathf.Atan2(newDiff.y, newDiff.x);
-
                 transform.rotation = Quaternion.Euler(0, 0, (angle * Mathf.Rad2Deg) + 135);
 
                 transform.position = newPosition;
