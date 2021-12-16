@@ -830,18 +830,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854458122514109851, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -893,8 +881,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyMenu
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5982461510135999222, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27bf1c5930489374dbc3985fd596aae7, type: 3}
 --- !u!114 &1771196262 stripped
 MonoBehaviour:
