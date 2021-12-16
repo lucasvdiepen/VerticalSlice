@@ -34,6 +34,7 @@ public class Mercy : MonoBehaviour
 
     public void AddMercy(float amount)
     {
+        FindObjectOfType<AudioManager>().Play("Mercy");
         slider.value = slider.value + amount;
         slider.value = Mathf.Clamp(slider.value, 0, maxMercy);
         UpdateText();

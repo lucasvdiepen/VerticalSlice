@@ -14,6 +14,7 @@ public class PlayerHealth : Health
         base.HandleTakeDamage();
         healthText.text = curHealth.ToString() + " / " + maxHealth.ToString();
         slider.value = (float)curHealth / (float)maxHealth * 100;
+        FindObjectOfType<AudioManager>().Play("Hurt");
     }
 
     protected override void HandleDeath()

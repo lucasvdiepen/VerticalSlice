@@ -48,6 +48,7 @@ public class CombatLogic : MonoBehaviour
         {
             GameObject obj = GetNearestSlider();
             if(obj != null) {
+                FindObjectOfType<AudioManager>().Play("Slash");
                 obj.GetComponent<CombatSlider>().canHit = true;
                 obj.GetComponent<CombatSlider>().CheckHit();
             }
