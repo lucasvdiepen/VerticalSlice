@@ -74,7 +74,7 @@ public class DialogueLogic : MonoBehaviour
             }
             if (!char.IsWhiteSpace(letter)) 
             {
-                //audioManager.Play("DialogueVoice");
+                audioManager.Play("DialogueVoice");
             }
             yield return new WaitForSeconds(talkingSpeed);
         }
