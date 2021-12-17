@@ -62,7 +62,9 @@ public class GameManager : MonoBehaviour
                 {
                     currentEnemy.GetComponent<Mercy>().AddMercy(100);
                 }
-                DoNextAction();
+
+                StartCoroutine(DoNextActionInSeconds(3f));
+
                 break;
             case ActionSaveManager.ActionType.Spare:
                 //if mercy is 100% then kill enemy

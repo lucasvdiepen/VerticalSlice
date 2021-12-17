@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     [HideInInspector] public int curHealth = 0;
     public int maxHealth = 100;
     [HideInInspector] public float damageReduction;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -38,6 +39,11 @@ public class Health : MonoBehaviour
         }
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void SetDamageReduction(float amount)
     {
         damageReduction = amount;
@@ -55,6 +61,8 @@ public class Health : MonoBehaviour
 
     protected virtual void HandleDeath()
     {
+        isDead = true;
+
         Debug.Log("Handle death called");
     }
 }

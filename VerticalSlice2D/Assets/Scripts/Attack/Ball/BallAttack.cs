@@ -24,9 +24,11 @@ public class BallAttack : MonoBehaviour
 
     public void StartAttack()
     {
-        target = GameObject.FindGameObjectWithTag("Heart").transform;
-
-        isAttacking = true;
+        if(!GetComponent<Health>().IsDead())
+        {
+            target = GameObject.FindGameObjectWithTag("Heart").transform;
+            isAttacking = true;
+        }
     }
 
     public void StopAttack()

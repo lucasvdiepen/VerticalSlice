@@ -20,9 +20,12 @@ public class SoundWaveAttack : MonoBehaviour
 
     public void StartAttack()
     {
-        target = GameObject.FindGameObjectWithTag("Heart").transform;
-        UpdateTarget();
-        isAttacking = true;
+        if(!GetComponent<Health>().IsDead())
+        {
+            target = GameObject.FindGameObjectWithTag("Heart").transform;
+            UpdateTarget();
+            isAttacking = true;
+        }
     }
 
     public void StopAttack()
