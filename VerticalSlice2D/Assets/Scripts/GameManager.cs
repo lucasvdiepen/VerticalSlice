@@ -74,7 +74,9 @@ public class GameManager : MonoBehaviour
                 {
                     enemy.GetComponent<EnemyHealth>().Spare();
                 }
-                DoNextAction();
+
+                StartCoroutine(DoNextActionInSeconds(3f));
+
                 break;
             case ActionSaveManager.ActionType.Defend:
                 //Set higher defense here
@@ -87,6 +89,13 @@ public class GameManager : MonoBehaviour
                 DoNextAction();
                 break;
         }
+    }
+
+    private IEnumerator DoNextActionInSeconds(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        DoNextAction();
     }
 
     public GameObject GetCurrentEnemy()
