@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    public bool isRunning;
+    [HideInInspector] public bool isRunning;
     private Animator characterAnim;
     private RectTransform rectTransform;
+    [SerializeField] private float runSpeed = 10f;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class AnimationController : MonoBehaviour
         }*/
 
         if (isRunning) {
-            rectTransform.localPosition += new Vector3(1, 0, 0) * Time.deltaTime;
+            rectTransform.position += new Vector3(1, 0, 0) * runSpeed * Time.deltaTime;
         }
     }
     public void PlayAnimation(string animation = "victory") 

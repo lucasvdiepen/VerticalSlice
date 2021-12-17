@@ -171,6 +171,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6467304420416623564, guid: 626f3052aa2d4f04592d627222d945da, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467304420416623564, guid: 626f3052aa2d4f04592d627222d945da, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 532a663b5841e524b85ca3ba936cd58a, type: 3}
+    - target: {fileID: 6467304420416623564, guid: 626f3052aa2d4f04592d627222d945da, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: blip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467304420416623564, guid: 626f3052aa2d4f04592d627222d945da, type: 3}
+      propertyPath: sounds.Array.data[1].mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: e2320423418dcfd418f842ba68e8a2f9, type: 2}
+    - target: {fileID: 6467304420416623564, guid: 626f3052aa2d4f04592d627222d945da, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467304420416623564, guid: 626f3052aa2d4f04592d627222d945da, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6467304420416623565, guid: 626f3052aa2d4f04592d627222d945da, type: 3}
       propertyPath: m_Name
       value: Audiomanager

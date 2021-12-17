@@ -21,7 +21,8 @@ public class EnemyHealth : Health
     protected override void HandleDeath()
     {
         base.HandleDeath();
-        GetComponent<AnimationController>().PlayAnimation("run");
+        GetComponent<AnimationController>().Run();
+        GetComponent<Animator>().enabled = false;
         FindObjectOfType<AudioManager>().Play("Run");
         //Run "run away" animatie
         //Run "mercy" animatie
