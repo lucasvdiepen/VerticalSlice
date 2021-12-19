@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Animator[] playerAnimators;
     [SerializeField] private GameObject heartMinigameHolder;
     [SerializeField] private float heartMinigameDuration = 5f;
 
     private int currentActionIndex = -1;
     private float lastHeartMinigameTime = 0;
+    private bool isGameOver = false;
 
     private void Update()
     {
@@ -28,68 +30,71 @@ public class GameManager : MonoBehaviour
 
     public void DoNextAction()
     {
-        List<ActionSaveManager.Action> actions = FindObjectOfType<ActionSaveManager>().GetActions();
-
-        currentActionIndex++;
-
-        if(currentActionIndex == actions.Count + 1)
+        if(!isGameOver)
         {
-            ActionsDone();
-            return;
-        }
+            List<ActionSaveManager.Action> actions = FindObjectOfType<ActionSaveManager>().GetActions();
 
-        if (currentActionIndex == actions.Count)
-        {
-            StartHeartMinigame();
-            return;
-        }
+            currentActionIndex++;
 
-        ActionSaveManager.Action action = actions[currentActionIndex];
+            if (currentActionIndex == actions.Count + 1)
+            {
+                ActionsDone();
+                return;
+            }
 
-        switch(action.actionType)
-        {
-            case ActionSaveManager.ActionType.Fight:
-                //Start fight script
-                StartCoroutine(FindObjectOfType<CombatLogic>().StartCombat());
-                break;
-            case ActionSaveManager.ActionType.SoftVoice:
-                //Set all enemy mergy 100%
+            if (currentActionIndex == actions.Count)
+            {
+                StartHeartMinigame();
+                return;
+            }
+
+            ActionSaveManager.Action action = actions[currentActionIndex];
+
+            switch (action.actionType)
+            {
+                case ActionSaveManager.ActionType.Fight:
+                    //Start fight script
+                    StartCoroutine(FindObjectOfType<CombatLogic>().StartCombat());
+                    break;
+                case ActionSaveManager.ActionType.SoftVoice:
+                    //Set all enemy mergy 100%
 
 
-                GameObject.FindGameObjectWithTag("Ralsei").GetComponent<AnimationController>().PlayAnimation("attack");
+                    GameObject.FindGameObjectWithTag("Ralsei").GetComponent<AnimationController>().PlayAnimation("attack");
 
-                foreach (GameObject currentEnemy in FindObjectOfType<EnemyMenu>().GetAllEnemies())
-                {
-                    currentEnemy.GetComponent<Mercy>().AddMercy(100);
-                }
+                    foreach (GameObject currentEnemy in FindObjectOfType<EnemyMenu>().GetAllEnemies())
+                    {
+                        currentEnemy.GetComponent<Mercy>().AddMercy(100);
+                    }
 
-                StartCoroutine(DoNextActionInSeconds(3f));
+                    StartCoroutine(DoNextActionInSeconds(3f));
 
-                break;
-            case ActionSaveManager.ActionType.Spare:
-                //if mercy is 100% then kill enemy
+                    break;
+                case ActionSaveManager.ActionType.Spare:
+                    //if mercy is 100% then kill enemy
 
-                GameObject.FindGameObjectWithTag(action.playerName).GetComponent<AnimationController>().PlayAnimation("act");
+                    GameObject.FindGameObjectWithTag(action.playerName).GetComponent<AnimationController>().PlayAnimation("act");
 
-                GameObject enemy = action.enemyObject;
-                if (enemy.GetComponent<Mercy>().GetCurrentMercy() >= 100)
-                {
-                    enemy.GetComponent<EnemyHealth>().Spare();
-                }
+                    GameObject enemy = action.enemyObject;
+                    if (enemy.GetComponent<Mercy>().GetCurrentMercy() >= 100)
+                    {
+                        enemy.GetComponent<EnemyHealth>().Spare();
+                    }
 
-                StartCoroutine(DoNextActionInSeconds(3f));
+                    StartCoroutine(DoNextActionInSeconds(3f));
 
-                break;
-            case ActionSaveManager.ActionType.Defend:
-                //Set higher defense here
-                // +16 tp and 50% damage reduction
-                FindObjectOfType<TPBar>().AddTp(16);
-                GameObject.FindGameObjectWithTag(action.playerName).GetComponent<Health>().SetDamageReduction(50);
-                DoNextAction();
-                break;
-            default:
-                DoNextAction();
-                break;
+                    break;
+                case ActionSaveManager.ActionType.Defend:
+                    //Set higher defense here
+                    // +16 tp and 50% damage reduction
+                    FindObjectOfType<TPBar>().AddTp(16);
+                    GameObject.FindGameObjectWithTag(action.playerName).GetComponent<Health>().SetDamageReduction(50);
+                    DoNextAction();
+                    break;
+                default:
+                    DoNextAction();
+                    break;
+            }
         }
     }
 
@@ -103,6 +108,26 @@ public class GameManager : MonoBehaviour
     public GameObject GetCurrentEnemy()
     {
         return FindObjectOfType<ActionSaveManager>().GetActions()[currentActionIndex].enemyObject;
+    }
+
+    public void GameOver(bool victory)
+    {
+        isGameOver = true;
+
+        if(victory)
+        {
+            StartCoroutine(GameOverAnimations(2f));
+        }
+    }
+
+    private IEnumerator GameOverAnimations(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        foreach (Animator playerAnimator in playerAnimators)
+        {
+            playerAnimator.SetTrigger("victory");
+        }
     }
 
     public void RunCombatAnimations()

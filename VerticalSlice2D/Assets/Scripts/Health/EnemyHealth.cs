@@ -24,9 +24,30 @@ public class EnemyHealth : Health
         GetComponent<AnimationController>().Run();
         GetComponent<Animator>().enabled = false;
         FindObjectOfType<AudioManager>().Play("Run");
+
+        if(AllEnemiesDead())
+        {
+            FindObjectOfType<GameManager>().GameOver(true);
+        }
+
         //Run "run away" animatie
         //Run "mercy" animatie
         //Deactivate enemy
+    }
+
+    private bool AllEnemiesDead()
+    {
+        EnemyHealth[] enemyHealthScripts = FindObjectsOfType<EnemyHealth>();
+
+        foreach(EnemyHealth enemyHealthScript in enemyHealthScripts)
+        {
+            if(!enemyHealthScript.IsDead())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void Spare()

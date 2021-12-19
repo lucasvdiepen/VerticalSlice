@@ -1050,6 +1050,22 @@ PrefabInstance:
       propertyPath: heartMinigameHolder
       value: 
       objectReference: {fileID: 1931432070}
+    - target: {fileID: 3075253576628700950, guid: c4c8611fb86dd4b4aad865c4e819ea90, type: 3}
+      propertyPath: playerAnimators.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075253576628700950, guid: c4c8611fb86dd4b4aad865c4e819ea90, type: 3}
+      propertyPath: playerAnimators.Array.data[0]
+      value: 
+      objectReference: {fileID: 156534350}
+    - target: {fileID: 3075253576628700950, guid: c4c8611fb86dd4b4aad865c4e819ea90, type: 3}
+      propertyPath: playerAnimators.Array.data[1]
+      value: 
+      objectReference: {fileID: 1193170923}
+    - target: {fileID: 3075253576628700950, guid: c4c8611fb86dd4b4aad865c4e819ea90, type: 3}
+      propertyPath: playerAnimators.Array.data[2]
+      value: 
+      objectReference: {fileID: 763249966}
     - target: {fileID: 3075253576628700951, guid: c4c8611fb86dd4b4aad865c4e819ea90, type: 3}
       propertyPath: m_RootOrder
       value: 7
