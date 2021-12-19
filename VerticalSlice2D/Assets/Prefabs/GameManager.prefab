@@ -43,4 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeff08ebebc005c4c9e4478db529d47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimators:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   heartMinigameHolder: {fileID: 0}
+  heartMinigameDuration: 5

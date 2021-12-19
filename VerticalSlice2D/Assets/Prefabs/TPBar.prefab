@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155541312419034869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -379.5658, y: 39.08778, z: -10607.904}
+  m_LocalPosition: {x: -894.0758, y: 292.7878, z: -10607.904}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_Children:
   - {fileID: 2401258328230743924}
@@ -526,7 +526,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &3439923678865042372
 MonoBehaviour:
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Watch Symphogear
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0295770da10468c478270d8ecf45bdce, type: 2}
   m_sharedMaterial: {fileID: -8689121555370936464, guid: 0295770da10468c478270d8ecf45bdce, type: 2}
@@ -717,7 +717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7615594559677025796
 Transform:
   m_ObjectHideFlags: 0
@@ -726,7 +726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4593651541836620303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -380.4618, y: 10.211985, z: -10116.308}
+  m_LocalPosition: {x: -894.9718, y: 263.91202, z: -10116.308}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_Children:
   - {fileID: 8787834529332480933}
@@ -895,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6549331821840960340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -360.65036, y: 17.28369, z: -9719.999}
+  m_LocalPosition: {x: -875.1604, y: 270.98373, z: -9719.999}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_Children: []
   m_Father: {fileID: 635836683321527602}
@@ -1343,7 +1343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7460317004282915421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -380.4618, y: 10.211987, z: -10116.308}
+  m_LocalPosition: {x: -894.9718, y: 263.91202, z: -10116.308}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_Children:
   - {fileID: 8975490779482621374}
@@ -1386,7 +1386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -193.49, y: 17.3}
+  m_AnchoredPosition: {x: -708, y: 271}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8017176217998695457
