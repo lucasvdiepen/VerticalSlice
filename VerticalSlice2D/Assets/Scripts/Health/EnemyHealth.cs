@@ -31,6 +31,8 @@ public class EnemyHealth : Health
 
     public void Spare()
     {
+        FindObjectOfType<AudioManager>().Play("Mercy");
+
         HandleDeath();
     }
 }
