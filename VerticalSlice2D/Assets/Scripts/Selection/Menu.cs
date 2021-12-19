@@ -32,18 +32,23 @@ public abstract class Menu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                if (selectedButton - 1 >= 0) selectedButton -= 1;
+                if (selectedButton - 1 >= 0){ selectedButton -= 1; HandleSoundEffect(); };
                 UpdateButtonSprite();
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (selectedButton + 1 < heartIcons.Length) selectedButton += 1;
+                if (selectedButton + 1 < heartIcons.Length) { selectedButton += 1; HandleSoundEffect(); };
                 UpdateButtonSprite();
             }
 
             if (Input.GetKeyDown(KeyCode.Space)) ExecuteButton();
         }
+    }
+
+    public void HandleSoundEffect()
+    {
+        FindObjectOfType<AudioManager>().Play("Blip");
     }
 
     public void UpdateButtonSprite()

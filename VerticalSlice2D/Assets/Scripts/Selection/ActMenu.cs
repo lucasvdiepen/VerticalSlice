@@ -12,13 +12,13 @@ public class ActMenu : Menu
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (selectedButton - 2 >= 0) selectedButton -= 2;
+                if (selectedButton - 2 >= 0) { selectedButton -= 2; HandleSoundEffect(); };
                 UpdateButtonSprite();
             }
 
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (selectedButton + 2 < heartIcons.Length) selectedButton += 2;
+                if (selectedButton + 2 < heartIcons.Length) { selectedButton += 2; HandleSoundEffect(); };
                 UpdateButtonSprite();
             }
         }
