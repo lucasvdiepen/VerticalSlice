@@ -9,10 +9,10 @@
 
 Who worked on which branch:
 Bart:
-https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/CameraShake
-https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/Backgroundmusic
-https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/gameover
-https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/tpbar
+Camera shake: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/CameraShake
+Background music: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/Backgroundmusic
+Game over screen: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/gameover
+TP bar: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/tpbar
 
 Lucas:
 
