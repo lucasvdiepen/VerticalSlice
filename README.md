@@ -12,12 +12,4 @@ Bart:
 Camera shake: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/CameraShake   
 Background music: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/Backgroundmusic   
 Game over screen: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/gameover   
-TP bar: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/tpbar   
-
-Lucas:
-
-
-Piter:
-
-
-George:
+TP bar: https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/tpbar
