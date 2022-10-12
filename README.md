@@ -6,3 +6,18 @@
 
 <h4> Wat is de opdracht precies? </h4>
 <h4> Wij gaan in deze module met vier developers en vier artists 10 tot 15 seconden uit een game precies namaken.</h4>
+
+Who worked on which branch:
+Bart:
+https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/CameraShake
+https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/Backgroundmusic
+https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/gameover
+https://github.com/lucasvdiepen/VerticalSlice2D/tree/feature/tpbar
+
+Lucas:
+
+
+Piter:
+
+
+George:
